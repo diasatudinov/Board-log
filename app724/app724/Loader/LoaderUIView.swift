@@ -11,6 +11,7 @@ struct LoaderUIView: View {
     @State private var progress: Double = 0.0
     @State private var timer: Timer?
     @State private var isLoadingView: Bool = true
+    @State private var isWeb: Bool = true
     
     var body: some View {
         if isLoadingView {
@@ -38,7 +39,7 @@ struct LoaderUIView: View {
                         
                         ProgressView(value: progress, total: 100)
                             .progressViewStyle(LinearProgressViewStyle())
-                            .tint(.white)
+                            .accentColor(.white)
                             .cornerRadius(15)
                             .scaleEffect(y: 2.5, anchor: .center)
                             .padding(.horizontal, 120)
@@ -58,7 +59,11 @@ struct LoaderUIView: View {
             }
             
         } else {
-            ReviewOnboardingUIView()
+            if !isWeb {
+                UserOnboardingUIView()
+            } else {
+                ReviewOnboardingUIView()
+            }
         }
     }
     func startTimer() {

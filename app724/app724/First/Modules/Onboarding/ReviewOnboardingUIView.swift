@@ -30,9 +30,9 @@ struct ReviewOnboardingUIView: View {
                             .frame(height: 549)
                             .ignoresSafeArea()
                     default:
-                        Image("appScreen1")
+                        Image("appScreen3")
                             .resizable()
-                            .frame(height: UIScreen.main.bounds.height * 0.7)
+                            .frame(height: 549)
                             .ignoresSafeArea()
                     }
                     
@@ -40,7 +40,7 @@ struct ReviewOnboardingUIView: View {
                         if pageNum < 3 {
                             pageNum += 1
                         } else {
-        
+                            print("SHEET OUT")
                         }
                     } label: {
                         Text("Next")
@@ -67,7 +67,7 @@ struct ReviewOnboardingUIView: View {
                             .cornerRadius(19)
         
                         Rectangle()
-                            .fill(pageNum == 3 ? Color.red : Color.gray.opacity(0.5))
+                            .fill(pageNum > 2 ? Color.red : Color.gray.opacity(0.5))
                             .frame(width: 35, height: 6)
                             .cornerRadius(19)
                     }
@@ -98,13 +98,13 @@ struct ReviewOnboardingUIView: View {
                             .foregroundColor(.white)
                             .padding(.bottom, 10)
                     default:
-                        Text("Manage your team!")
+                        Text("Save information about \nyour favorite routes")
                             .font(.title)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .frame(height: 70)
+                            .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                             .padding(.bottom, 10)
-                        Text("Be your own trainer!")
-                            .foregroundColor(.white).opacity(0.7)
         
                     }
         
