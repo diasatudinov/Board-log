@@ -11,8 +11,9 @@ import SwiftUI
 struct app724App: App {
     var body: some Scene {
         WindowGroup {
-           // LoaderUIView()
-            TabUIView()
+            LoaderUIView()
+            //TabUIView()
+            //SignUpUIView()
         }
     }
 }

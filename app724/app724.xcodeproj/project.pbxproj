@@ -20,6 +20,8 @@
 		2BC4F4D12C47F2610082B288 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 2BC4F4D02C47F2610082B288 /* OneSignalInAppMessages */; };
 		2BC4F4D32C47F2610082B288 /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 2BC4F4D22C47F2610082B288 /* OneSignalLocation */; };
 		2BC4F4D62C48149B0082B288 /* TabUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4D52C48149B0082B288 /* TabUIView.swift */; };
+		2BC4F4DB2C4825080082B288 /* SignUpUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4DA2C4825080082B288 /* SignUpUIView.swift */; };
+		2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4DC2C4827360082B288 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		2BC4F4C62C47E7230082B288 /* ReviewOnboardingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewOnboardingUIView.swift; sourceTree = "<group>"; };
 		2BC4F4C92C47F1EE0082B288 /* UserOnboardingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOnboardingUIView.swift; sourceTree = "<group>"; };
 		2BC4F4D52C48149B0082B288 /* TabUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUIView.swift; sourceTree = "<group>"; };
+		2BC4F4DA2C4825080082B288 /* SignUpUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIView.swift; sourceTree = "<group>"; };
+		2BC4F4DC2C4827360082B288 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 		2BC4F4C32C47E6970082B288 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2BC4F4D92C4824E90082B288 /* Registration */,
 				2BC4F4C52C47E7080082B288 /* Onboarding */,
 				2BC4F4D42C48146A0082B288 /* TabView */,
 			);
@@ -160,6 +165,15 @@
 				2BC4F4D52C48149B0082B288 /* TabUIView.swift */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		2BC4F4D92C4824E90082B288 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F4DA2C4825080082B288 /* SignUpUIView.swift */,
+				2BC4F4DC2C4827360082B288 /* ImagePicker.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +258,9 @@
 				2BC4F4CA2C47F1EE0082B288 /* UserOnboardingUIView.swift in Sources */,
 				2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */,
 				2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */,
+				2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */,
 				2BC4F4D62C48149B0082B288 /* TabUIView.swift in Sources */,
+				2BC4F4DB2C4825080082B288 /* SignUpUIView.swift in Sources */,
 				2BC4F4BF2C47D1BF0082B288 /* LoaderUIView.swift in Sources */,
 				2BC4F4C72C47E7230082B288 /* ReviewOnboardingUIView.swift in Sources */,
 				2BC4F4C22C47E0AC0082B288 /* View +extension.swift in Sources */,

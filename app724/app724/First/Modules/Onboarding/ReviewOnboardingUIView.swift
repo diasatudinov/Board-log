@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ReviewOnboardingUIView: View {
     @State private var pageNum: Int = 1
-
+    @State private var showSheet = false
+    @State private var signedUP = false
+    
     var body: some View {
+        if !signedUP {
             ZStack {
                 Color.background
                     .ignoresSafeArea()
@@ -40,6 +43,7 @@ struct ReviewOnboardingUIView: View {
                         if pageNum < 3 {
                             pageNum += 1
                         } else {
+                            showSheet = true
                             print("SHEET OUT")
                         }
                     } label: {
@@ -52,7 +56,7 @@ struct ReviewOnboardingUIView: View {
                         .cornerRadius(18)
                         .padding(.horizontal, 24)
                         .padding(.bottom)
-        
+                    
                 }
                 VStack {
                     HStack(spacing: 8) {
@@ -60,12 +64,12 @@ struct ReviewOnboardingUIView: View {
                             .fill(pageNum == 1 ? Color.red : Color.gray.opacity(0.5))
                             .frame(width: 35, height: 6)
                             .cornerRadius(19)
-        
+                        
                         Rectangle()
                             .fill(pageNum == 2 ? Color.red : Color.gray.opacity(0.5))
                             .frame(width: 35, height: 6)
                             .cornerRadius(19)
-        
+                        
                         Rectangle()
                             .fill(pageNum > 2 ? Color.red : Color.gray.opacity(0.5))
                             .frame(width: 35, height: 6)
@@ -105,12 +109,17 @@ struct ReviewOnboardingUIView: View {
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                             .padding(.bottom, 10)
-        
+                        
                     }
-        
+                    
                 }.padding(.bottom, UIScreen.main.bounds.height * 2/2.8)
+            }.sheet(isPresented: $showSheet) {
+                // Sheet content
+                SignUpUIView(isSignedUp: $signedUP)
             }
-
+        } else {
+            TabUIView()
+        }
     }
 }
 
