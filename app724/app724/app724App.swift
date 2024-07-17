@@ -11,7 +11,8 @@ import SwiftUI
 struct app724App: App {
     var body: some Scene {
         WindowGroup {
-            LoaderUIView()
+           // LoaderUIView()
+            TabUIView()
         }
     }
 }
