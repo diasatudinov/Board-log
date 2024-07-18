@@ -84,17 +84,18 @@ struct SignUpUIView: View {
                         ZStack(alignment: .leading) {
                             
                             TextField("", text: $experience)
-                                .padding()
+                                .padding([.trailing,.top,.bottom])
+                                .padding(.leading, 110)
                                 .background(Color.signupTextField)
                                 .foregroundColor(.white)
                                 .font(.system(size: 17, weight: .bold))
                                 .cornerRadius(18)
-                            if experience.isEmpty {
-                                Text("Experience")
+                            
+                                Text("Experience:")
                                     .foregroundColor(.gray)
                                     .padding(.horizontal, 16)
                                     .allowsHitTesting(false)
-                            }
+                            
                         }
                         
                     }.padding(.horizontal)
