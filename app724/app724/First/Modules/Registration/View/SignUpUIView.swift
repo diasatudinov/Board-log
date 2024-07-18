@@ -108,17 +108,31 @@ struct SignUpUIView: View {
                 Spacer()
                 
                 Button {
-                    isSignedUp = true
+                    
+                    if !name.isEmpty && !experience.isEmpty {
+                        
+                        if let image = selectedImage {
+                            let profile = ProfileModel(imageData: image.jpegData(compressionQuality: 1.0), name: name, experience: experience)
+                            saveProfile(profile)
+                        } else {
+                            let profile = ProfileModel(imageData: nil, name: name, experience: experience)
+                            saveProfile(profile)
+                        }
+                        isSignedUp = true
+                    }
                 } label: {
                     ZStack(alignment: .center) {
                         Rectangle()
                             .frame(height: 54)
-                            .foregroundColor(Color.onboardingButton.opacity(name.isEmpty || experience.isEmpty ? 0.5 : 1))
+                            .foregroundColor(Color.onboardingButton.opacity(!name.isEmpty && !experience.isEmpty ? 1 : 0.5))
                             .font(.system(size: 17, weight: .bold))
                             .cornerRadius(16)
                             .padding(.horizontal)
-                        Text("Save")
-                            .font(.system(size: 17))
+                        HStack(spacing: 4) {
+                            Image(systemName: "checkmark")
+                            Text("Save")
+                                
+                        }.font(.system(size: 17, weight: .semibold))
                             .foregroundColor(.onboardingButtonText)
                     }
                 }.padding(.bottom, 10)
@@ -132,6 +146,12 @@ struct SignUpUIView: View {
     func loadImage() {
         if let selectedImage = selectedImage {
             print("Selected image size: \(selectedImage.size)")
+        }
+    }
+    
+    func saveProfile(_ profile: ProfileModel) {
+        if let encoded = try? JSONEncoder().encode(profile) {
+            UserDefaults.standard.set(encoded, forKey: "profile")
         }
     }
 }

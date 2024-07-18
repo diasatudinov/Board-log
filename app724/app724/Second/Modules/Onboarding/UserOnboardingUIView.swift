@@ -131,11 +131,22 @@ struct UserOnboardingUIView: View {
                                     print("User accepted notifications: \(accepted)")
                                 }, fallbackToSettings: true)
                             } label: {
-                                Text("Enable notification")
-                                    .foregroundColor(.onboardingButtonText)
-                                    .font(.headline)
-                                    .padding()
-                                    .frame(maxWidth: .infinity)
+                                
+                                ZStack(alignment: .center) {
+                                    Rectangle()
+                                        .frame(height: 54)
+                                        .foregroundColor(Color.onboardingButton)
+                                        .font(.system(size: 17, weight: .bold))
+                                        .cornerRadius(16)
+                                        .padding(.horizontal)
+                                    HStack(spacing: 4) {
+                                        Image(systemName: "bell.badge")
+                                        Text("Enable notification")
+                                            
+                                    }.font(.system(size: 17, weight: .semibold))
+                                        .foregroundColor(.onboardingButtonText)
+                                }
+//                                }
                             }.background(Color.onboardingButton)
                                 .cornerRadius(18)
                                 .padding(.horizontal, 24)

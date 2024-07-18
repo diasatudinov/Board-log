@@ -12,29 +12,19 @@ struct TabUIView: View {
 //    @ObservedObject var inventoryVM = InventoryViewModel()
 //    @ObservedObject var itemVM = ItemViewModel()
 //    @ObservedObject var calendarVM = CalendarViewModel()
-    
-//    init() {
-//        UITabBar.appearance().backgroundColor = UIColor.tabBar
-//        
-//        let tabBarAppearance = UITabBarAppearance()
-//        
-//        tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.white
-//        tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//        
-//        tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.onboardingText
-//        tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.onboardingText]
-//        
-//        UITabBar.appearance().standardAppearance = tabBarAppearance
-//    }
     @State var selectedTab = 0
+    @State var image: UIImage?
     private let tabs = ["Home", "Search", "Profile", "Settings"]
-    
+    @State private var profile: ProfileModel?
+    @ObservedObject var profileVM = ProfileViewModel()
+    @ObservedObject private var keyboardResponder = KeyboardResponder()
+
     var body: some View {
         ZStack {
             
             switch selectedTab {
             case 0:
-                Text("Profile")
+                ProfileUIView(profileVM: profileVM)
             case 1:
                 Text("Tracks")
             case 2:
@@ -58,20 +48,43 @@ struct TabUIView: View {
                             Button(action: {
                                 selectedTab = index
                             }) {
-                                ZStack {
-                                    Circle()
-                                        .fill(selectedTab == index ? Color.onboardingButton : Color.tabViewCircle)
-                                        .frame(width: 54, height: 54)
-                                    
-                                    Image(systemName: icon(for: index))
-                                        .foregroundColor(Color.tabViewIcon)
-                                        .font(.system(size: 16))
+                                if index == 0 {
+                                    ZStack {
+                                        Circle()
+                                            .fill(selectedTab == index ? Color.onboardingButton : Color.tabViewCircle)
+                                            .frame(width: 54, height: 54)
+                                        if let image = image {
+                                            Image(uiImage: image)
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .frame(width: 54, height: 54)
+                                                .clipShape(Circle())
+                                                .foregroundColor(Color.tabViewIcon)
+                                                .font(.system(size: 16))
+                                        } else {
+                                            Image(systemName: "person.fill")
+                                                .foregroundColor(Color.tabViewIcon)
+                                                .font(.system(size: 16))
+                                        }
+                                    }
+                                } else {
+                                    ZStack {
+                                        Circle()
+                                            .fill(selectedTab == index ? Color.onboardingButton : Color.tabViewCircle)
+                                            .frame(width: 54, height: 54)
+                                        
+                                        Image(systemName: icon(for: index))
+                                            .foregroundColor(Color.tabViewIcon)
+                                            .font(.system(size: 16))
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
+            }.edgesIgnoringSafeArea(keyboardResponder.currentHeight > 0 ? .top : [])
+        }.onAppear {
+            loadProfile()
         }
     }
     
@@ -82,6 +95,14 @@ struct TabUIView: View {
         case 2: return "house.fill"
         case 3: return "gearshape.fill"
         default: return ""
+        }
+    }
+    
+    func loadProfile() {
+        if let data = UserDefaults.standard.data(forKey: "profile"),
+           let decodedProfile = try? JSONDecoder().decode(ProfileModel.self, from: data) {
+            profile = decodedProfile
+            image = decodedProfile.image
         }
     }
 }
