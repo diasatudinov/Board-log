@@ -22,6 +22,12 @@
 		2BC4F4D62C48149B0082B288 /* TabUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4D52C48149B0082B288 /* TabUIView.swift */; };
 		2BC4F4DB2C4825080082B288 /* SignUpUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4DA2C4825080082B288 /* SignUpUIView.swift */; };
 		2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4DC2C4827360082B288 /* ImagePicker.swift */; };
+		2BC4F4E12C4900E10082B288 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4E02C4900E10082B288 /* ProfileModel.swift */; };
+		2BC4F4E72C491D0B0082B288 /* ProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4E62C491D0B0082B288 /* ProfileUIView.swift */; };
+		2BC4F4E92C4930CB0082B288 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4E82C4930CB0082B288 /* ProfileViewModel.swift */; };
+		2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4EA2C493B4C0082B288 /* EditProfileUIView.swift */; };
+		2BC4F4ED2C4948190082B288 /* FavoriteTrailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4EC2C4948190082B288 /* FavoriteTrailsUIView.swift */; };
+		2BC4F4EF2C4948350082B288 /* FavoriteResortUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4EE2C4948350082B288 /* FavoriteResortUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,12 @@
 		2BC4F4D52C48149B0082B288 /* TabUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUIView.swift; sourceTree = "<group>"; };
 		2BC4F4DA2C4825080082B288 /* SignUpUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIView.swift; sourceTree = "<group>"; };
 		2BC4F4DC2C4827360082B288 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2BC4F4E02C4900E10082B288 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		2BC4F4E62C491D0B0082B288 /* ProfileUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIView.swift; sourceTree = "<group>"; };
+		2BC4F4E82C4930CB0082B288 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		2BC4F4EA2C493B4C0082B288 /* EditProfileUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUIView.swift; sourceTree = "<group>"; };
+		2BC4F4EC2C4948190082B288 /* FavoriteTrailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTrailsUIView.swift; sourceTree = "<group>"; };
+		2BC4F4EE2C4948350082B288 /* FavoriteResortUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteResortUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +140,7 @@
 		2BC4F4C32C47E6970082B288 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2BC4F4E22C491CDB0082B288 /* Profile */,
 				2BC4F4D92C4824E90082B288 /* Registration */,
 				2BC4F4C52C47E7080082B288 /* Onboarding */,
 				2BC4F4D42C48146A0082B288 /* TabView */,
@@ -170,10 +183,63 @@
 		2BC4F4D92C4824E90082B288 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				2BC4F4DA2C4825080082B288 /* SignUpUIView.swift */,
+				2BC4F4DF2C4900CE0082B288 /* Model */,
+				2BC4F4DE2C4900C30082B288 /* View */,
 				2BC4F4DC2C4827360082B288 /* ImagePicker.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		2BC4F4DE2C4900C30082B288 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F4DA2C4825080082B288 /* SignUpUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BC4F4DF2C4900CE0082B288 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F4E02C4900E10082B288 /* ProfileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BC4F4E22C491CDB0082B288 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F4E52C491CFA0082B288 /* Model */,
+				2BC4F4E42C491CF40082B288 /* View */,
+				2BC4F4E32C491CEE0082B288 /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2BC4F4E32C491CEE0082B288 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F4E82C4930CB0082B288 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BC4F4E42C491CF40082B288 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F4E62C491D0B0082B288 /* ProfileUIView.swift */,
+				2BC4F4EA2C493B4C0082B288 /* EditProfileUIView.swift */,
+				2BC4F4EC2C4948190082B288 /* FavoriteTrailsUIView.swift */,
+				2BC4F4EE2C4948350082B288 /* FavoriteResortUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BC4F4E52C491CFA0082B288 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,10 +322,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BC4F4CA2C47F1EE0082B288 /* UserOnboardingUIView.swift in Sources */,
+				2BC4F4EF2C4948350082B288 /* FavoriteResortUIView.swift in Sources */,
 				2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */,
+				2BC4F4E72C491D0B0082B288 /* ProfileUIView.swift in Sources */,
 				2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */,
 				2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */,
+				2BC4F4ED2C4948190082B288 /* FavoriteTrailsUIView.swift in Sources */,
 				2BC4F4D62C48149B0082B288 /* TabUIView.swift in Sources */,
+				2BC4F4E92C4930CB0082B288 /* ProfileViewModel.swift in Sources */,
+				2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */,
+				2BC4F4E12C4900E10082B288 /* ProfileModel.swift in Sources */,
 				2BC4F4DB2C4825080082B288 /* SignUpUIView.swift in Sources */,
 				2BC4F4BF2C47D1BF0082B288 /* LoaderUIView.swift in Sources */,
 				2BC4F4C72C47E7230082B288 /* ReviewOnboardingUIView.swift in Sources */,

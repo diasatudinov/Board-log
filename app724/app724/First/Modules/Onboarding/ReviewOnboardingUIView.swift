@@ -11,6 +11,7 @@ struct ReviewOnboardingUIView: View {
     @State private var pageNum: Int = 1
     @State private var showSheet = false
     @State private var signedUP = false
+    @State private var profile: ProfileModel?
     
     var body: some View {
         if !signedUP {
@@ -113,12 +114,30 @@ struct ReviewOnboardingUIView: View {
                     }
                     
                 }.padding(.bottom, UIScreen.main.bounds.height * 2/2.8)
-            }.sheet(isPresented: $showSheet) {
+            }
+            .onAppear {
+                loadProfile()
+            }
+            .sheet(isPresented: $showSheet) {
                 // Sheet content
                 SignUpUIView(isSignedUp: $signedUP)
             }
+            
         } else {
             TabUIView()
+        }
+    }
+    
+    func loadProfile() {
+        if let data = UserDefaults.standard.data(forKey: "profile"),
+           let decodedProfile = try? JSONDecoder().decode(ProfileModel.self, from: data) {
+            profile = decodedProfile
+        }
+        
+        if let profile = profile {
+            signedUP = true
+        } else {
+            signedUP = false
         }
     }
 }
