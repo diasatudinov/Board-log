@@ -8,13 +8,20 @@
 import SwiftUI
 
 class ProfileViewModel: ObservableObject {
-    @Published var images: [UIImage] = [] //{
-//        didSet {
-//            DispatchQueue.main.async {
-//                self.saveImages()
-//            }
-//        }
-    //}
+    @Published var images: [UIImage] = [] 
+    @Published var isTabBarHidden: Bool = false
+    
+    func hideTabVisibility() {
+        DispatchQueue.main.async {
+            self.isTabBarHidden = true
+        }
+    }
+    
+    func showTabVisibility() {
+        DispatchQueue.main.async {
+            self.isTabBarHidden = false
+        }
+    }
     
     init() {
         loadImages()

@@ -34,7 +34,7 @@ struct ProfileUIView: View {
                                 HStack {
                                     Spacer()
                                     NavigationLink {
-                                        EditProfileUIView()
+                                        EditProfileUIView(profileVM: profileVM)
                                     } label: {
                                         ZStack {
                                             Rectangle()
@@ -231,6 +231,8 @@ struct ProfileUIView: View {
                 }.padding(.bottom, 40)
                 
             }.onAppear {
+                
+                profileVM.showTabVisibility()
                 loadProfile()
             }
         }

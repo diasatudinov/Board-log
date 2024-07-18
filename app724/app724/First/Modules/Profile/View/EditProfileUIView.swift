@@ -9,15 +9,14 @@ import SwiftUI
 import Combine
 
 struct EditProfileUIView: View {
+    @ObservedObject var profileVM: ProfileViewModel
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var name = ""
     @State private var experience = ""
     @State private var profile: ProfileModel?
-    @State private var editingProfile = true
+    @State private var editingProfile = false
 
-    
-    @ObservedObject private var keyboardResponder = KeyboardResponder()
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -168,6 +167,8 @@ struct EditProfileUIView: View {
                         .padding(.bottom, 24)
                 }
                 Spacer()
+            }.onAppear {
+                profileVM.hideTabVisibility()
             }
             
             VStack {
@@ -176,15 +177,16 @@ struct EditProfileUIView: View {
                     Button {
                         
                         if !name.isEmpty && !experience.isEmpty {
-                            
-                            if let image = selectedImage {
-                                let profile = ProfileModel(imageData: image.jpegData(compressionQuality: 1.0), name: name, experience: experience)
-                                saveProfile(profile)
-                            } else {
-                                let profile = ProfileModel(imageData: nil, name: name, experience: experience)
-                                saveProfile(profile)
+                            DispatchQueue.main.async {
+                                if let image = selectedImage {
+                                    let profile = ProfileModel(imageData: image.jpegData(compressionQuality: 1.0), name: name, experience: experience)
+                                    saveProfile(profile)
+                                } else {
+                                    let profile = ProfileModel(imageData: nil, name: name, experience: experience)
+                                    saveProfile(profile)
+                                }
+                                editingProfile = false
                             }
-                            editingProfile = false
                         }
                     } label: {
                         ZStack(alignment: .center) {
@@ -227,72 +229,18 @@ struct EditProfileUIView: View {
     }
     
     func loadProfile() {
-        if let data = UserDefaults.standard.data(forKey: "profile"),
-           let decodedProfile = try? JSONDecoder().decode(ProfileModel.self, from: data) {
-            profile = decodedProfile
-            selectedImage = decodedProfile.image
-            name = decodedProfile.name
-            experience = decodedProfile.experience
+        DispatchQueue.main.async {
+            if let data = UserDefaults.standard.data(forKey: "profile"),
+               let decodedProfile = try? JSONDecoder().decode(ProfileModel.self, from: data) {
+                profile = decodedProfile
+                selectedImage = decodedProfile.image
+                name = decodedProfile.name
+                experience = decodedProfile.experience
+            }
         }
     }
 }
 
 #Preview {
-    EditProfileUIView()
-}
-
-
-class KeyboardResponder: ObservableObject {
-    @Published var currentHeight: CGFloat = 0
-    
-    private var cancellables: Set<AnyCancellable> = []
-    
-    init() {
-        let keyboardWillShow = NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)
-            .map { notification -> CGFloat in
-                if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
-                    return keyboardFrame.height
-                } else {
-                    return 0
-                }
-            }
-        
-        let keyboardWillHide = NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)
-            .map { _ -> CGFloat in
-                return 0
-            }
-        
-        keyboardWillShow.merge(with: keyboardWillHide)
-            .assign(to: \.currentHeight, on: self)
-            .store(in: &cancellables)
-    }
-}
-
-struct NavigationTitleColor: UIViewControllerRepresentable {
-    var titleColor: UIColor
-
-    func makeUIViewController(context: Context) -> UIViewController {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .clear
-
-        if let navigationController = viewController.navigationController {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.titleTextAttributes = [.foregroundColor: titleColor]
-            navigationController.navigationBar.standardAppearance = appearance
-            navigationController.navigationBar.scrollEdgeAppearance = appearance
-        }
-
-        return viewController
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        if let navigationController = uiViewController.navigationController {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.titleTextAttributes = [.foregroundColor: titleColor]
-            navigationController.navigationBar.standardAppearance = appearance
-            navigationController.navigationBar.scrollEdgeAppearance = appearance
-        }
-    }
+    EditProfileUIView(profileVM: ProfileViewModel())
 }

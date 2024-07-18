@@ -8,16 +8,11 @@
 import SwiftUI
 
 struct TabUIView: View {
-//    @ObservedObject var teamVM = TeamViewModel()
-//    @ObservedObject var inventoryVM = InventoryViewModel()
-//    @ObservedObject var itemVM = ItemViewModel()
-//    @ObservedObject var calendarVM = CalendarViewModel()
     @State var selectedTab = 0
     @State var image: UIImage?
     private let tabs = ["Home", "Search", "Profile", "Settings"]
     @State private var profile: ProfileModel?
     @ObservedObject var profileVM = ProfileViewModel()
-    @ObservedObject private var keyboardResponder = KeyboardResponder()
 
     var body: some View {
         ZStack {
@@ -34,57 +29,60 @@ struct TabUIView: View {
             default:
                 Text("FIVETH")
             }
-            VStack {
-                Spacer()
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 61)
-                        .fill(Color.tabViewIcon)
-                        .frame(height: 70)
-                        .padding(.horizontal, 68)
+            if !profileVM.isTabBarHidden {
+                VStack {
+                    Spacer()
                     
-                    HStack(spacing: 9) {
-                        ForEach(0..<tabs.count) { index in
-                            Button(action: {
-                                selectedTab = index
-                            }) {
-                                if index == 0 {
-                                    ZStack {
-                                        Circle()
-                                            .fill(selectedTab == index ? Color.onboardingButton : Color.tabViewCircle)
-                                            .frame(width: 54, height: 54)
-                                        if let image = image {
-                                            Image(uiImage: image)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 61)
+                            .fill(Color.tabViewIcon)
+                            .frame(height: 70)
+                            .padding(.horizontal, 68)
+                        
+                        HStack(spacing: 9) {
+                            ForEach(0..<tabs.count) { index in
+                                Button(action: {
+                                    selectedTab = index
+                                }) {
+                                    if index == 0 {
+                                        ZStack {
+                                            Circle()
+                                                .fill(selectedTab == index ? Color.onboardingButton : Color.tabViewCircle)
                                                 .frame(width: 54, height: 54)
-                                                .clipShape(Circle())
-                                                .foregroundColor(Color.tabViewIcon)
-                                                .font(.system(size: 16))
-                                        } else {
-                                            Image(systemName: "person.fill")
+                                            if let image = image {
+                                                Image(uiImage: image)
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .frame(width: 54, height: 54)
+                                                    .clipShape(Circle())
+                                                    .foregroundColor(Color.tabViewIcon)
+                                                    .font(.system(size: 16))
+                                            } else {
+                                                Image(systemName: "person.fill")
+                                                    .foregroundColor(Color.tabViewIcon)
+                                                    .font(.system(size: 16))
+                                            }
+                                        }
+                                    } else {
+                                        ZStack {
+                                            Circle()
+                                                .fill(selectedTab == index ? Color.onboardingButton : Color.tabViewCircle)
+                                                .frame(width: 54, height: 54)
+                                            
+                                            Image(systemName: icon(for: index))
                                                 .foregroundColor(Color.tabViewIcon)
                                                 .font(.system(size: 16))
                                         }
-                                    }
-                                } else {
-                                    ZStack {
-                                        Circle()
-                                            .fill(selectedTab == index ? Color.onboardingButton : Color.tabViewCircle)
-                                            .frame(width: 54, height: 54)
-                                        
-                                        Image(systemName: icon(for: index))
-                                            .foregroundColor(Color.tabViewIcon)
-                                            .font(.system(size: 16))
                                     }
                                 }
                             }
                         }
                     }
                 }
-            }.edgesIgnoringSafeArea(keyboardResponder.currentHeight > 0 ? .top : [])
-        }.onAppear {
-            loadProfile()
+                    .onAppear {
+                        loadProfile()
+                    }
+            }
         }
     }
     
@@ -102,7 +100,11 @@ struct TabUIView: View {
         if let data = UserDefaults.standard.data(forKey: "profile"),
            let decodedProfile = try? JSONDecoder().decode(ProfileModel.self, from: data) {
             profile = decodedProfile
-            image = decodedProfile.image
+            DispatchQueue.main.async {
+                
+                
+                image = decodedProfile.image
+            }
         }
     }
 }
