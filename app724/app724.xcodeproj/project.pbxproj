@@ -35,6 +35,10 @@
 		2BC4F5012C4A780F0082B288 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4F5002C4A780F0082B288 /* SF-Pro-Text-Bold.otf */; };
 		2BC4F5052C4A835C0082B288 /* AddNewTrackUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5042C4A835C0082B288 /* AddNewTrackUIView.swift */; };
 		2BC4F5082C4A91360082B288 /* TrackDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5072C4A91360082B288 /* TrackDetailsUIView.swift */; };
+		2BC4F50E2C4AA3160082B288 /* Resort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F50D2C4AA3160082B288 /* Resort.swift */; };
+		2BC4F5112C4AA4180082B288 /* ResortDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5102C4AA4180082B288 /* ResortDetailsUIView.swift */; };
+		2BC4F5142C4AA4370082B288 /* AddResortUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5132C4AA4370082B288 /* AddResortUIView.swift */; };
+		2BC4F5162C4AA4550082B288 /* ReservationsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5152C4AA4550082B288 /* ReservationsUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		2BC4F5022C4A78DA0082B288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2BC4F5042C4A835C0082B288 /* AddNewTrackUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTrackUIView.swift; sourceTree = "<group>"; };
 		2BC4F5072C4A91360082B288 /* TrackDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsUIView.swift; sourceTree = "<group>"; };
+		2BC4F50D2C4AA3160082B288 /* Resort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resort.swift; sourceTree = "<group>"; };
+		2BC4F5102C4AA4180082B288 /* ResortDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortDetailsUIView.swift; sourceTree = "<group>"; };
+		2BC4F5132C4AA4370082B288 /* AddResortUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResortUIView.swift; sourceTree = "<group>"; };
+		2BC4F5152C4AA4550082B288 /* ReservationsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +165,7 @@
 		2BC4F4C32C47E6970082B288 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2BC4F5092C4AA2B30082B288 /* Reservations */,
 				2BC4F4F32C4A638A0082B288 /* Tracks */,
 				2BC4F4E22C491CDB0082B288 /* Profile */,
 				2BC4F4D92C4824E90082B288 /* Registration */,
@@ -321,6 +330,57 @@
 			path = TrackDetails;
 			sourceTree = "<group>";
 		};
+		2BC4F5092C4AA2B30082B288 /* Reservations */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F50C2C4AA2C70082B288 /* Model */,
+				2BC4F50B2C4AA2C30082B288 /* View */,
+				2BC4F50A2C4AA2BC0082B288 /* ViewModel */,
+			);
+			path = Reservations;
+			sourceTree = "<group>";
+		};
+		2BC4F50A2C4AA2BC0082B288 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BC4F50B2C4AA2C30082B288 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F50F2C4AA3F50082B288 /* ResortDetails */,
+				2BC4F5122C4AA4220082B288 /* AddNewResort */,
+				2BC4F5152C4AA4550082B288 /* ReservationsUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BC4F50C2C4AA2C70082B288 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F50D2C4AA3160082B288 /* Resort.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BC4F50F2C4AA3F50082B288 /* ResortDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F5102C4AA4180082B288 /* ResortDetailsUIView.swift */,
+			);
+			path = ResortDetails;
+			sourceTree = "<group>";
+		};
+		2BC4F5122C4AA4220082B288 /* AddNewResort */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F5132C4AA4370082B288 /* AddResortUIView.swift */,
+			);
+			path = AddNewResort;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -407,8 +467,10 @@
 				2BC4F5052C4A835C0082B288 /* AddNewTrackUIView.swift in Sources */,
 				2BC4F4E72C491D0B0082B288 /* ProfileUIView.swift in Sources */,
 				2BC4F4FC2C4A660C0082B288 /* TracksUIView.swift in Sources */,
+				2BC4F5112C4AA4180082B288 /* ResortDetailsUIView.swift in Sources */,
 				2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */,
 				2BC4F4FA2C4A65340082B288 /* TrackViewModel.swift in Sources */,
+				2BC4F5162C4AA4550082B288 /* ReservationsUIView.swift in Sources */,
 				2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */,
 				2BC4F4FE2C4A67830082B288 /* TrackCellUIView.swift in Sources */,
 				2BC4F4ED2C4948190082B288 /* FavoriteTrailsUIView.swift in Sources */,
@@ -417,6 +479,8 @@
 				2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */,
 				2BC4F4E12C4900E10082B288 /* ProfileModel.swift in Sources */,
 				2BC4F4F82C4A64050082B288 /* Track.swift in Sources */,
+				2BC4F5142C4AA4370082B288 /* AddResortUIView.swift in Sources */,
+				2BC4F50E2C4AA3160082B288 /* Resort.swift in Sources */,
 				2BC4F5082C4A91360082B288 /* TrackDetailsUIView.swift in Sources */,
 				2BC4F4DB2C4825080082B288 /* SignUpUIView.swift in Sources */,
 				2BC4F4BF2C47D1BF0082B288 /* LoaderUIView.swift in Sources */,
