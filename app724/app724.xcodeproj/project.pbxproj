@@ -28,6 +28,13 @@
 		2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4EA2C493B4C0082B288 /* EditProfileUIView.swift */; };
 		2BC4F4ED2C4948190082B288 /* FavoriteTrailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4EC2C4948190082B288 /* FavoriteTrailsUIView.swift */; };
 		2BC4F4EF2C4948350082B288 /* FavoriteResortUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4EE2C4948350082B288 /* FavoriteResortUIView.swift */; };
+		2BC4F4F82C4A64050082B288 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4F72C4A64050082B288 /* Track.swift */; };
+		2BC4F4FA2C4A65340082B288 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4F92C4A65340082B288 /* TrackViewModel.swift */; };
+		2BC4F4FC2C4A660C0082B288 /* TracksUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4FB2C4A660C0082B288 /* TracksUIView.swift */; };
+		2BC4F4FE2C4A67830082B288 /* TrackCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4FD2C4A67830082B288 /* TrackCellUIView.swift */; };
+		2BC4F5012C4A780F0082B288 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4F5002C4A780F0082B288 /* SF-Pro-Text-Bold.otf */; };
+		2BC4F5052C4A835C0082B288 /* AddNewTrackUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5042C4A835C0082B288 /* AddNewTrackUIView.swift */; };
+		2BC4F5082C4A91360082B288 /* TrackDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5072C4A91360082B288 /* TrackDetailsUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,14 @@
 		2BC4F4EA2C493B4C0082B288 /* EditProfileUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUIView.swift; sourceTree = "<group>"; };
 		2BC4F4EC2C4948190082B288 /* FavoriteTrailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTrailsUIView.swift; sourceTree = "<group>"; };
 		2BC4F4EE2C4948350082B288 /* FavoriteResortUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteResortUIView.swift; sourceTree = "<group>"; };
+		2BC4F4F72C4A64050082B288 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		2BC4F4F92C4A65340082B288 /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
+		2BC4F4FB2C4A660C0082B288 /* TracksUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksUIView.swift; sourceTree = "<group>"; };
+		2BC4F4FD2C4A67830082B288 /* TrackCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellUIView.swift; sourceTree = "<group>"; };
+		2BC4F5002C4A780F0082B288 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../../Downloads/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		2BC4F5022C4A78DA0082B288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2BC4F5042C4A835C0082B288 /* AddNewTrackUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTrackUIView.swift; sourceTree = "<group>"; };
+		2BC4F5072C4A91360082B288 /* TrackDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +100,7 @@
 		2BC4F4AC2C47CD890082B288 /* app724 */ = {
 			isa = PBXGroup;
 			children = (
+				2BC4F5022C4A78DA0082B288 /* Info.plist */,
 				2BC4F4C02C47E0950082B288 /* Extensions */,
 				2BC4F4BD2C47D1AD0082B288 /* Loader */,
 				2BC4F4BB2C47D06F0082B288 /* First */,
@@ -92,6 +108,7 @@
 				2BC4F4AD2C47CD890082B288 /* app724App.swift */,
 				2BC4F4AF2C47CD890082B288 /* ContentView.swift */,
 				2BC4F4B12C47CD8C0082B288 /* Assets.xcassets */,
+				2BC4F4FF2C4A77EC0082B288 /* Fonts */,
 				2BC4F4B32C47CD8C0082B288 /* Preview Content */,
 			);
 			path = app724;
@@ -140,6 +157,7 @@
 		2BC4F4C32C47E6970082B288 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2BC4F4F32C4A638A0082B288 /* Tracks */,
 				2BC4F4E22C491CDB0082B288 /* Profile */,
 				2BC4F4D92C4824E90082B288 /* Registration */,
 				2BC4F4C52C47E7080082B288 /* Onboarding */,
@@ -242,6 +260,67 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2BC4F4F32C4A638A0082B288 /* Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F4F62C4A63F50082B288 /* Model */,
+				2BC4F4F52C4A63F00082B288 /* View */,
+				2BC4F4F42C4A63E90082B288 /* ViewModel */,
+			);
+			path = Tracks;
+			sourceTree = "<group>";
+		};
+		2BC4F4F42C4A63E90082B288 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F4F92C4A65340082B288 /* TrackViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BC4F4F52C4A63F00082B288 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F5062C4A911E0082B288 /* TrackDetails */,
+				2BC4F5032C4A834A0082B288 /* AddNewTrack */,
+				2BC4F4FB2C4A660C0082B288 /* TracksUIView.swift */,
+				2BC4F4FD2C4A67830082B288 /* TrackCellUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BC4F4F62C4A63F50082B288 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F4F72C4A64050082B288 /* Track.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BC4F4FF2C4A77EC0082B288 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F5002C4A780F0082B288 /* SF-Pro-Text-Bold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2BC4F5032C4A834A0082B288 /* AddNewTrack */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F5042C4A835C0082B288 /* AddNewTrackUIView.swift */,
+			);
+			path = AddNewTrack;
+			sourceTree = "<group>";
+		};
+		2BC4F5062C4A911E0082B288 /* TrackDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2BC4F5072C4A91360082B288 /* TrackDetailsUIView.swift */,
+			);
+			path = TrackDetails;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,6 +390,7 @@
 			files = (
 				2BC4F4B52C47CD8C0082B288 /* Preview Assets.xcassets in Resources */,
 				2BC4F4B22C47CD8C0082B288 /* Assets.xcassets in Resources */,
+				2BC4F5012C4A780F0082B288 /* SF-Pro-Text-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,14 +404,20 @@
 				2BC4F4CA2C47F1EE0082B288 /* UserOnboardingUIView.swift in Sources */,
 				2BC4F4EF2C4948350082B288 /* FavoriteResortUIView.swift in Sources */,
 				2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */,
+				2BC4F5052C4A835C0082B288 /* AddNewTrackUIView.swift in Sources */,
 				2BC4F4E72C491D0B0082B288 /* ProfileUIView.swift in Sources */,
+				2BC4F4FC2C4A660C0082B288 /* TracksUIView.swift in Sources */,
 				2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */,
+				2BC4F4FA2C4A65340082B288 /* TrackViewModel.swift in Sources */,
 				2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */,
+				2BC4F4FE2C4A67830082B288 /* TrackCellUIView.swift in Sources */,
 				2BC4F4ED2C4948190082B288 /* FavoriteTrailsUIView.swift in Sources */,
 				2BC4F4D62C48149B0082B288 /* TabUIView.swift in Sources */,
 				2BC4F4E92C4930CB0082B288 /* ProfileViewModel.swift in Sources */,
 				2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */,
 				2BC4F4E12C4900E10082B288 /* ProfileModel.swift in Sources */,
+				2BC4F4F82C4A64050082B288 /* Track.swift in Sources */,
+				2BC4F5082C4A91360082B288 /* TrackDetailsUIView.swift in Sources */,
 				2BC4F4DB2C4825080082B288 /* SignUpUIView.swift in Sources */,
 				2BC4F4BF2C47D1BF0082B288 /* LoaderUIView.swift in Sources */,
 				2BC4F4C72C47E7230082B288 /* ReviewOnboardingUIView.swift in Sources */,
@@ -471,6 +557,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"app724/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = app724/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -499,6 +586,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"app724/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = app724/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

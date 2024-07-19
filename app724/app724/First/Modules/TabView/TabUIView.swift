@@ -13,7 +13,8 @@ struct TabUIView: View {
     private let tabs = ["Home", "Search", "Profile", "Settings"]
     @State private var profile: ProfileModel?
     @ObservedObject var profileVM = ProfileViewModel()
-
+    @ObservedObject var trackVM = TrackViewModel()
+    
     var body: some View {
         ZStack {
             
@@ -21,7 +22,7 @@ struct TabUIView: View {
             case 0:
                 ProfileUIView(profileVM: profileVM)
             case 1:
-                Text("Tracks")
+                TracksUIView(viewModel: trackVM)
             case 2:
                 Text("HOME")
             case 3:
@@ -79,9 +80,9 @@ struct TabUIView: View {
                         }
                     }
                 }
-                    .onAppear {
-                        loadProfile()
-                    }
+                .onAppear {
+                    loadProfile()
+                }
             }
         }
     }
