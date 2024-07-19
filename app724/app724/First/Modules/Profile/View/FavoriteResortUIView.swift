@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct FavoriteResortUIView: View {
+    @ObservedObject var viewModel: ResortViewModel
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
-            if true {
+            if viewModel.favoriteResorts.isEmpty {
                 VStack {
                     ZStack {
                         Rectangle()
@@ -54,11 +55,18 @@ struct FavoriteResortUIView: View {
                     }
                     Spacer()
                 }
+            } else {
+                ScrollView {
+                    ForEach(viewModel.favoriteResorts, id: \.self) { resort in
+                        ResortCellUIView(viewModel: viewModel, resort: resort)
+                            .padding(.bottom, 13)
+                    }
+                }.padding(.horizontal)
             }
         }.navigationBarTitle("Favorite reservations", displayMode: .inline)
     }
 }
 
 #Preview {
-    FavoriteResortUIView()
+    FavoriteResortUIView(viewModel: ResortViewModel())
 }
