@@ -55,7 +55,7 @@ struct FavoriteResortUIView: View {
                     Spacer()
                 }
             }
-        }
+        }.navigationBarTitle("Favorite reservations", displayMode: .inline)
     }
 }
 

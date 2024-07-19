@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct FavoriteTrailsUIView: View {
+    @ObservedObject var viewModel: TrackViewModel
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
-            if true {
+            if viewModel.favoriteResorts.isEmpty {
                 VStack {
                     ZStack {
                         Rectangle()
@@ -54,11 +55,29 @@ struct FavoriteTrailsUIView: View {
                     }
                     Spacer()
                 }
+            } else {
+                ScrollView {
+                    ForEach(viewModel.favoriteResorts, id: \.self) { track in
+                        TrackCellUIView(viewModel: viewModel, track: track)
+                            .padding(.bottom, 13)
+                    }
+                }.padding(.horizontal)
             }
-        }
+        }.navigationBarTitle("Favorite tracks", displayMode: .inline)
     }
 }
 
 #Preview {
-    FavoriteTrailsUIView()
+    FavoriteTrailsUIView(viewModel: TrackViewModel())
 }
+
+//struct FavoriteResortsView: View {
+//    @ObservedObject var viewModel: TrackViewModel
+//
+//    var body: some View {
+//        List(viewModel.favoriteResorts) { track in
+//            TrackCellUIView(viewModel: viewModel, track: track)
+//        }
+//        .navigationBarTitle("Favorite Resorts")
+//    }
+//}

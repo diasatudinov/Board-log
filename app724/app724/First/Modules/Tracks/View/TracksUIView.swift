@@ -60,15 +60,3 @@ struct TracksUIView: View {
 #Preview {
     TracksUIView(viewModel: TrackViewModel())
 }
-
-
-//struct FavoriteResortsView: View {
-//    @ObservedObject var viewModel: TrackViewModel
-//    
-//    var body: some View {
-//        List(viewModel.favoriteResorts) { track in
-//            TrackCellUIView(viewModel: viewModel, track: track)
-//        }
-//        .navigationBarTitle("Favorite Resorts")
-//    }
-//}

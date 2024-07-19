@@ -12,6 +12,7 @@ struct ProfileUIView: View {
     @State private var images2: [UIImage] = []
     @State private var showingImagePicker = false
     @ObservedObject var profileVM: ProfileViewModel
+    @ObservedObject var trackVM: TrackViewModel
     
     var body: some View {
         NavigationView {
@@ -96,7 +97,7 @@ struct ProfileUIView: View {
                         }.padding(.bottom, 13)
                         
                         NavigationLink {
-                            FavoriteTrailsUIView()
+                            FavoriteTrailsUIView(viewModel: trackVM)
                         } label: {
                             ZStack {
                                 Rectangle()
@@ -114,7 +115,7 @@ struct ProfileUIView: View {
                                         .font(.system(size: 17)
                                             .weight(.semibold))
                                         .foregroundColor(.white)
-                                    Text("(0)")
+                                    Text("(\(trackVM.favoriteResorts.count))")
                                         .foregroundColor(.favoritesNumber.opacity(0.5))
                                     Spacer()
                                     Image(systemName: "chevron.right")
@@ -250,5 +251,5 @@ struct ProfileUIView: View {
 }
 
 #Preview {
-    ProfileUIView(profile: ProfileModel(name: "AAAA", experience: "AAAAA"), profileVM: ProfileViewModel())
+    ProfileUIView(profile: ProfileModel(name: "AAAA", experience: "AAAAA"), profileVM: ProfileViewModel(), trackVM: TrackViewModel())
 }

@@ -15,12 +15,13 @@ struct TabUIView: View {
     @ObservedObject var profileVM = ProfileViewModel()
     @ObservedObject var trackVM = TrackViewModel()
     
+    
     var body: some View {
         ZStack {
             
             switch selectedTab {
             case 0:
-                ProfileUIView(profileVM: profileVM)
+                ProfileUIView(profileVM: profileVM, trackVM: trackVM)
             case 1:
                 TracksUIView(viewModel: trackVM)
             case 2:

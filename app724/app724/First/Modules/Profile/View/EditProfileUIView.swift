@@ -208,6 +208,7 @@ struct EditProfileUIView: View {
             }.padding(.bottom, 70)
                 
         }
+        .navigationBarTitle("Edit profile", displayMode: .inline)
         .sheet(isPresented: $isShowingImagePicker, onDismiss: loadImage) {
             ImagePicker(selectedImage: $selectedImage, isPresented: $isShowingImagePicker)
         }
