@@ -14,6 +14,7 @@ struct TabUIView: View {
     @State private var profile: ProfileModel?
     @ObservedObject var profileVM = ProfileViewModel()
     @ObservedObject var trackVM = TrackViewModel()
+    @ObservedObject var resortVM = ResortViewModel()
     
     
     var body: some View {
@@ -21,11 +22,11 @@ struct TabUIView: View {
             
             switch selectedTab {
             case 0:
-                ProfileUIView(profileVM: profileVM, trackVM: trackVM)
+                ProfileUIView(profileVM: profileVM, trackVM: trackVM, resortVM: resortVM)
             case 1:
                 TracksUIView(viewModel: trackVM)
             case 2:
-                Text("HOME")
+                ReservationsUIView(viewModel: resortVM)
             case 3:
                 Text("SETTINGS")
             default:

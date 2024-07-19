@@ -169,7 +169,7 @@ struct AddNewTrackUIView: View {
                     ZStack(alignment: .center) {
                         Rectangle()
                             .frame(height: 54)
-                            .foregroundColor(Color.onboardingButton.opacity(!name.isEmpty && !length.isEmpty ? 1 : 0.5))
+                            .foregroundColor(Color.onboardingButton.opacity(!name.isEmpty && !length.isEmpty && !location.isEmpty && rating != 0 ? 1 : 0.5))
                             .font(.system(size: 17, weight: .bold))
                             .cornerRadius(16)
                             .padding(.horizontal)
