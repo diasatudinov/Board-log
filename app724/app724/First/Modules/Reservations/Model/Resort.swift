@@ -12,7 +12,7 @@ struct Resort: Identifiable, Hashable {
     var imageData: Data?
     var name: String
     var location: String
-    var price: Int
+    var price: String
     var rating: Int
     var isFavorite: Bool = false
     
