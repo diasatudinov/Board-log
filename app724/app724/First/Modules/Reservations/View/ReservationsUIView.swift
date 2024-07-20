@@ -23,14 +23,59 @@ struct ReservationsUIView: View {
                             .bold()
                         Spacer()
                     }.padding(.horizontal)
-                    ScrollView {
-                        ForEach(viewModel.resorts, id: \.self){ resort in
-                            ResortCellUIView(viewModel: viewModel, resort: resort).padding(.bottom, 13)
-                                .onTapGesture {
-                                    selectedResort = resort
+                    if viewModel.resorts.isEmpty {
+                        VStack {
+                            ZStack {
+                                Rectangle()
+                                    .frame(height: 207)
+                                    .cornerRadius(18)
+                                    .foregroundColor(.signupTextField)
+                                    .padding(.horizontal)
+                                VStack(spacing: 0) {
+                                    Image(systemName: "house")
+                                        .font(.system(size: 28))
+                                        .foregroundColor(.favoritesNumber.opacity(0.5))
+                                        .padding(.top, 10)
+                                        .padding(.bottom, 12)
+                                    Text("Add a new reservation!")
+                                        .multilineTextAlignment(.center)
+                                        .font(.system(size: 17).weight(.semibold))
+                                        .foregroundColor(.white)
+                                        .padding(.bottom, 25)
+                                    Button {
+                                        showAddTrackSheet = true
+                                    } label: {
+                                        ZStack(alignment: .center) {
+                                            Rectangle()
+                                                .frame(height: 46)
+                                                .foregroundColor(Color.onboardingButton)
+                                                .font(.system(size: 17, weight: .bold))
+                                                .cornerRadius(16)
+                                                .padding(.horizontal, 30)
+                                            HStack(spacing: 4) {
+                                                Image(systemName: "plus")
+                                                    .font(.system(size: 16, weight: .semibold))
+                                                Text("Add")
+                                                    .font(.system(size: 17, weight: .semibold))
+                                                
+                                            }.foregroundColor(.black)
+                                        }
+                                    }
                                 }
+                                
+                            }
+                            Spacer()
                         }
-                    }.padding(.horizontal).padding(.bottom, 40)
+                    } else {
+                        ScrollView {
+                            ForEach(viewModel.resorts, id: \.self){ resort in
+                                ResortCellUIView(viewModel: viewModel, resort: resort).padding(.bottom, 13)
+                                    .onTapGesture {
+                                        selectedResort = resort
+                                    }
+                            }
+                        }.padding(.horizontal).padding(.bottom, 40)
+                    }
                 }
                 .navigationBarItems(trailing:
                                         Button {
