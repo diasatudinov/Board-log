@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Resort: Identifiable, Hashable {
+struct Resort: Identifiable, Codable, Hashable {
     let id = UUID()
     var imageData: Data?
     var name: String
@@ -17,7 +17,7 @@ struct Resort: Identifiable, Hashable {
     var isFavorite: Bool = false
     
     enum CodingKeys: String, CodingKey {
-        case id, imageData, name, length, location, rating, isFavorite
+        case id, imageData, name, location, price, rating, isFavorite
     }
     
     var image: UIImage? {

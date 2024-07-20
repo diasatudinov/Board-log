@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2B55F5052C4AAD410060D9B0 /* ResortCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5042C4AAD410060D9B0 /* ResortCellUIView.swift */; };
 		2B55F5072C4AAD530060D9B0 /* ResortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5062C4AAD530060D9B0 /* ResortViewModel.swift */; };
+		2B55F50B2C4BB6540060D9B0 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F50A2C4BB6540060D9B0 /* SettingsUIView.swift */; };
+		2B55F50E2C4BB6740060D9B0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F50D2C4BB6740060D9B0 /* SettingsViewModel.swift */; };
 		2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AD2C47CD890082B288 /* app724App.swift */; };
 		2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AF2C47CD890082B288 /* ContentView.swift */; };
 		2BC4F4B22C47CD8C0082B288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4F4B12C47CD8C0082B288 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		2B55F5042C4AAD410060D9B0 /* ResortCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortCellUIView.swift; sourceTree = "<group>"; };
 		2B55F5062C4AAD530060D9B0 /* ResortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortViewModel.swift; sourceTree = "<group>"; };
+		2B55F50A2C4BB6540060D9B0 /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
+		2B55F50D2C4BB6740060D9B0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2BC4F4AA2C47CD890082B288 /* app724.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app724.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC4F4AD2C47CD890082B288 /* app724App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app724App.swift; sourceTree = "<group>"; };
 		2BC4F4AF2C47CD890082B288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B55F5082C4BB6400060D9B0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F50C2C4BB65D0060D9B0 /* ViewModel */,
+				2B55F5092C4BB6460060D9B0 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2B55F5092C4BB6460060D9B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F50A2C4BB6540060D9B0 /* SettingsUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B55F50C2C4BB65D0060D9B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F50D2C4BB6740060D9B0 /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2BC4F4A12C47CD880082B288 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +198,7 @@
 		2BC4F4C32C47E6970082B288 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2B55F5082C4BB6400060D9B0 /* Settings */,
 				2BC4F5092C4AA2B30082B288 /* Reservations */,
 				2BC4F4F32C4A638A0082B288 /* Tracks */,
 				2BC4F4E22C491CDB0082B288 /* Profile */,
@@ -480,8 +510,10 @@
 				2BC4F5162C4AA4550082B288 /* ReservationsUIView.swift in Sources */,
 				2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */,
 				2BC4F4FE2C4A67830082B288 /* TrackCellUIView.swift in Sources */,
+				2B55F50B2C4BB6540060D9B0 /* SettingsUIView.swift in Sources */,
 				2BC4F4ED2C4948190082B288 /* FavoriteTrailsUIView.swift in Sources */,
 				2BC4F4D62C48149B0082B288 /* TabUIView.swift in Sources */,
+				2B55F50E2C4BB6740060D9B0 /* SettingsViewModel.swift in Sources */,
 				2BC4F4E92C4930CB0082B288 /* ProfileViewModel.swift in Sources */,
 				2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */,
 				2BC4F4E12C4900E10082B288 /* ProfileModel.swift in Sources */,
