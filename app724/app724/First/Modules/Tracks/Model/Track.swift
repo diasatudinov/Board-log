@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Track: Identifiable, Hashable {
+struct Track: Identifiable, Hashable, Codable {
     let id = UUID()
     var imageData: Data?
     var name: String

@@ -28,9 +28,9 @@ struct TabUIView: View {
             case 2:
                 ReservationsUIView(viewModel: resortVM)
             case 3:
-                Text("SETTINGS")
+                SettingsUIView()
             default:
-                Text("FIVETH")
+                Text("default")
             }
             if !profileVM.isTabBarHidden {
                 VStack {

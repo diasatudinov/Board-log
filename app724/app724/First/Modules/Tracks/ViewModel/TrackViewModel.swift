@@ -9,11 +9,17 @@ import Foundation
 
 
 class TrackViewModel: ObservableObject {
-    @Published var tracks: [Track] = [
-        Track(name: "Track 1", length: "1050m", location: "USA, Colorado", rating: 4),
-        Track(name: "Track 2", length: "2350m", location: "UK, London", rating: 2)
-        // Add more resorts here
-    ]
+    @Published var tracks: [Track] = [] {
+        didSet {
+            saveTracks()
+        }
+    }
+    
+    private let tracksFileName = "tracks.json"
+    
+    init() {
+        loadTracks()
+    }
     
     func addTracks(_ track: Track) {
         tracks.append(track)
@@ -38,5 +44,36 @@ class TrackViewModel: ObservableObject {
     
     var favoriteResorts: [Track] {
         tracks.filter { $0.isFavorite }
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    private func tracksFilePath() -> URL {
+        return getDocumentsDirectory().appendingPathComponent(tracksFileName)
+    }
+    
+    private func saveTracks() {
+        DispatchQueue.global().async {
+            let encoder = JSONEncoder()
+            do {
+                let data = try encoder.encode(self.tracks)
+                try data.write(to: self.tracksFilePath())
+            } catch {
+                print("Failed to save players: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func loadTracks() {
+        let decoder = JSONDecoder()
+        do {
+            let data = try Data(contentsOf: tracksFilePath())
+            tracks = try decoder.decode([Track].self, from: data)
+        } catch {
+            print("Failed to load players: \(error.localizedDescription)")
+        }
     }
 }
