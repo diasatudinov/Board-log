@@ -111,6 +111,9 @@ struct UserOnboardingUIView: View {
                 }
                 
             }
+        }
+        else if pageNum == 6 {
+            WebUIView()
         } else {
             if isNotificationView {
                 ZStack {
@@ -183,8 +186,7 @@ struct UserOnboardingUIView: View {
                 }
                 
             } else {
-                Text("WEB View")
-                //WebUIView()
+                WebUIView()
             }
         }
     }
