@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct app724App: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     init() {
             let appearance = UINavigationBarAppearance()
@@ -22,9 +23,8 @@ struct app724App: App {
     
     var body: some Scene {
         WindowGroup {
+            //ContentView()
             LoaderUIView()
-            //TabUIView()
-            //SignUpUIView()
         }
     }
 }

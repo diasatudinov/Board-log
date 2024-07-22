@@ -11,6 +11,15 @@
 		2B55F5072C4AAD530060D9B0 /* ResortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5062C4AAD530060D9B0 /* ResortViewModel.swift */; };
 		2B55F50B2C4BB6540060D9B0 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F50A2C4BB6540060D9B0 /* SettingsUIView.swift */; };
 		2B55F50E2C4BB6740060D9B0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F50D2C4BB6740060D9B0 /* SettingsViewModel.swift */; };
+		2B55F5102C4E48880060D9B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F50F2C4E48880060D9B0 /* AppDelegate.swift */; };
+		2B55F5132C4E48B20060D9B0 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5122C4E48B20060D9B0 /* ApphudSDK */; };
+		2B55F5162C4E49860060D9B0 /* AppMetricaAdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5152C4E49860060D9B0 /* AppMetricaAdSupport */; };
+		2B55F5182C4E49860060D9B0 /* AppMetricaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5172C4E49860060D9B0 /* AppMetricaCore */; };
+		2B55F51A2C4E49860060D9B0 /* AppMetricaCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5192C4E49860060D9B0 /* AppMetricaCrashes */; };
+		2B55F51C2C4E49860060D9B0 /* AppMetricaWebKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F51B2C4E49860060D9B0 /* AppMetricaWebKit */; };
+		2B55F51F2C4E4A640060D9B0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F51E2C4E4A640060D9B0 /* Response.swift */; };
+		2B55F5212C4E4A8D0060D9B0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5202C4E4A8D0060D9B0 /* API.swift */; };
+		2B55F5252C4E5D0C0060D9B0 /* WebUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5242C4E5D0C0060D9B0 /* WebUIView.swift */; };
 		2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AD2C47CD890082B288 /* app724App.swift */; };
 		2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AF2C47CD890082B288 /* ContentView.swift */; };
 		2BC4F4B22C47CD8C0082B288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4F4B12C47CD8C0082B288 /* Assets.xcassets */; };
@@ -50,6 +59,10 @@
 		2B55F5062C4AAD530060D9B0 /* ResortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortViewModel.swift; sourceTree = "<group>"; };
 		2B55F50A2C4BB6540060D9B0 /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
 		2B55F50D2C4BB6740060D9B0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		2B55F50F2C4E48880060D9B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B55F51E2C4E4A640060D9B0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		2B55F5202C4E4A8D0060D9B0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2B55F5242C4E5D0C0060D9B0 /* WebUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUIView.swift; sourceTree = "<group>"; };
 		2BC4F4AA2C47CD890082B288 /* app724.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app724.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC4F4AD2C47CD890082B288 /* app724App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app724App.swift; sourceTree = "<group>"; };
 		2BC4F4AF2C47CD890082B288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,9 +100,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B55F51A2C4E49860060D9B0 /* AppMetricaCrashes in Frameworks */,
 				2BC4F4D12C47F2610082B288 /* OneSignalInAppMessages in Frameworks */,
+				2B55F5162C4E49860060D9B0 /* AppMetricaAdSupport in Frameworks */,
 				2BC4F4CF2C47F2610082B288 /* OneSignalFramework in Frameworks */,
+				2B55F5132C4E48B20060D9B0 /* ApphudSDK in Frameworks */,
+				2B55F5182C4E49860060D9B0 /* AppMetricaCore in Frameworks */,
 				2BC4F4D32C47F2610082B288 /* OneSignalLocation in Frameworks */,
+				2B55F51C2C4E49860060D9B0 /* AppMetricaWebKit in Frameworks */,
 				2BC4F4CD2C47F2610082B288 /* OneSignalExtension in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +140,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		2B55F51D2C4E4A4B0060D9B0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F51E2C4E4A640060D9B0 /* Response.swift */,
+				2B55F5202C4E4A8D0060D9B0 /* API.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2B55F5222C4E5CED0060D9B0 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5242C4E5D0C0060D9B0 /* WebUIView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		2BC4F4A12C47CD880082B288 = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +181,9 @@
 				2BC4F4BD2C47D1AD0082B288 /* Loader */,
 				2BC4F4BB2C47D06F0082B288 /* First */,
 				2BC4F4BC2C47D0760082B288 /* Second */,
+				2B55F51D2C4E4A4B0060D9B0 /* Service */,
 				2BC4F4AD2C47CD890082B288 /* app724App.swift */,
+				2B55F50F2C4E48880060D9B0 /* AppDelegate.swift */,
 				2BC4F4AF2C47CD890082B288 /* ContentView.swift */,
 				2BC4F4B12C47CD8C0082B288 /* Assets.xcassets */,
 				2BC4F4FF2C4A77EC0082B288 /* Fonts */,
@@ -212,6 +249,7 @@
 		2BC4F4C42C47E69F0082B288 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2B55F5222C4E5CED0060D9B0 /* WebView */,
 				2BC4F4C82C47F1D70082B288 /* Onboarding */,
 			);
 			path = Modules;
@@ -438,6 +476,11 @@
 				2BC4F4CE2C47F2610082B288 /* OneSignalFramework */,
 				2BC4F4D02C47F2610082B288 /* OneSignalInAppMessages */,
 				2BC4F4D22C47F2610082B288 /* OneSignalLocation */,
+				2B55F5122C4E48B20060D9B0 /* ApphudSDK */,
+				2B55F5152C4E49860060D9B0 /* AppMetricaAdSupport */,
+				2B55F5172C4E49860060D9B0 /* AppMetricaCore */,
+				2B55F5192C4E49860060D9B0 /* AppMetricaCrashes */,
+				2B55F51B2C4E49860060D9B0 /* AppMetricaWebKit */,
 			);
 			productName = app724;
 			productReference = 2BC4F4AA2C47CD890082B288 /* app724.app */;
@@ -469,6 +512,8 @@
 			mainGroup = 2BC4F4A12C47CD880082B288;
 			packageReferences = (
 				2BC4F4CB2C47F2610082B288 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
+				2B55F5112C4E48B20060D9B0 /* XCRemoteSwiftPackageReference "ApphudSDK" */,
+				2B55F5142C4E49860060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */,
 			);
 			productRefGroup = 2BC4F4AB2C47CD890082B288 /* Products */;
 			projectDirPath = "";
@@ -501,6 +546,7 @@
 				2BC4F4EF2C4948350082B288 /* FavoriteResortUIView.swift in Sources */,
 				2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */,
 				2BC4F5052C4A835C0082B288 /* AddNewTrackUIView.swift in Sources */,
+				2B55F5252C4E5D0C0060D9B0 /* WebUIView.swift in Sources */,
 				2BC4F4E72C491D0B0082B288 /* ProfileUIView.swift in Sources */,
 				2B55F5052C4AAD410060D9B0 /* ResortCellUIView.swift in Sources */,
 				2BC4F4FC2C4A660C0082B288 /* TracksUIView.swift in Sources */,
@@ -515,7 +561,9 @@
 				2BC4F4D62C48149B0082B288 /* TabUIView.swift in Sources */,
 				2B55F50E2C4BB6740060D9B0 /* SettingsViewModel.swift in Sources */,
 				2BC4F4E92C4930CB0082B288 /* ProfileViewModel.swift in Sources */,
+				2B55F5102C4E48880060D9B0 /* AppDelegate.swift in Sources */,
 				2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */,
+				2B55F51F2C4E4A640060D9B0 /* Response.swift in Sources */,
 				2BC4F4E12C4900E10082B288 /* ProfileModel.swift in Sources */,
 				2BC4F4F82C4A64050082B288 /* Track.swift in Sources */,
 				2BC4F5142C4AA4370082B288 /* AddResortUIView.swift in Sources */,
@@ -525,6 +573,7 @@
 				2BC4F4BF2C47D1BF0082B288 /* LoaderUIView.swift in Sources */,
 				2BC4F4C72C47E7230082B288 /* ReviewOnboardingUIView.swift in Sources */,
 				2BC4F4C22C47E0AC0082B288 /* View +extension.swift in Sources */,
+				2B55F5212C4E4A8D0060D9B0 /* API.swift in Sources */,
 				2B55F5072C4AAD530060D9B0 /* ResortViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,8 +714,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,9 +723,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = adm.app724;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -694,8 +747,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -703,9 +756,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = adm.app724;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -733,6 +790,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2B55F5112C4E48B20060D9B0 /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apphud/ApphudSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.0;
+			};
+		};
+		2B55F5142C4E49860060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appmetrica/appmetrica-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 		2BC4F4CB2C47F2610082B288 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK";
@@ -744,6 +817,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2B55F5122C4E48B20060D9B0 /* ApphudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5112C4E48B20060D9B0 /* XCRemoteSwiftPackageReference "ApphudSDK" */;
+			productName = ApphudSDK;
+		};
+		2B55F5152C4E49860060D9B0 /* AppMetricaAdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5142C4E49860060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaAdSupport;
+		};
+		2B55F5172C4E49860060D9B0 /* AppMetricaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5142C4E49860060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaCore;
+		};
+		2B55F5192C4E49860060D9B0 /* AppMetricaCrashes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5142C4E49860060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaCrashes;
+		};
+		2B55F51B2C4E49860060D9B0 /* AppMetricaWebKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B55F5142C4E49860060D9B0 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaWebKit;
+		};
 		2BC4F4CC2C47F2610082B288 /* OneSignalExtension */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2BC4F4CB2C47F2610082B288 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;

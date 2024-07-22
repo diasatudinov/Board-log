@@ -6,41 +6,22 @@
 //
 
 import SwiftUI
-import PhotosUI
+import WebKit
+//import FirebaseRemoteConfig
+
 struct ContentView: View {
-    @State private var images: [UIImage] = []
-    @State private var showingImagePicker = false
-    
+    @State private var lastVisitedURL: URL? = UserDefaults.standard.url(forKey: "lastVisitedURL") ?? URL(string: "https://google.com")
+
     var body: some View {
-        NavigationView {
-            ScrollView {
-                LazyVGrid(columns: Array(repeating: GridItem(.fixed(108), spacing: 10), count: 3), spacing: 10) {
-                    // Add Image Button
-                    Button(action: {
-                        showingImagePicker = true
-                    }) {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .frame(width: 108, height: 108)
-                            .background(Color.gray.opacity(0.3))
-                            .cornerRadius(10)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    .sheet(isPresented: $showingImagePicker) {
-                        ImagePicker2(images: $images)
-                    }
-                    
-                    // Display Images
-                    ForEach(images, id: \.self) { image in
-                        Image(uiImage: image)
-                            .resizable()
-                            .frame(width: 108, height: 108)
-                            .cornerRadius(10)
-                    }
-                }
-                .padding()
+        WebView(lastVisitedURL: $lastVisitedURL)
+            .onAppear {
+                loadLastVisitedURL()
             }
-            .navigationTitle("Gallery")
+    }
+
+    private func loadLastVisitedURL() {
+        if let savedURL = UserDefaults.standard.url(forKey: "lastVisitedURL") {
+            lastVisitedURL = savedURL
         }
     }
 }
@@ -49,48 +30,53 @@ struct ContentView: View {
     ContentView()
 }
 
-struct ImagePicker2: UIViewControllerRepresentable {
-    @Binding var images: [UIImage]
-    
-    func makeUIViewController(context: Context) -> PHPickerViewController {
-        var configuration = PHPickerConfiguration()
-        configuration.filter = .images
-        configuration.selectionLimit = 0 // 0 means no limit
-        
-        let picker = PHPickerViewController(configuration: configuration)
-        picker.delegate = context.coordinator
-        return picker
-    }
-    
-    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {}
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-    
-    class Coordinator: NSObject, PHPickerViewControllerDelegate {
-        var parent: ImagePicker2
-        
-        init(_ parent: ImagePicker2) {
-            self.parent = parent
-        }
-        
-        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            picker.dismiss(animated: true)
-            
-            for result in results {
-                if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
-                    result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
-                        if let image = image as? UIImage {
-                            DispatchQueue.main.async {
-                                self?.parent.images.append(image)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        
-    }
-}
+
+//struct WebView: UIViewRepresentable {
+//    @Binding var lastVisitedURL: URL?
+//
+//    func makeUIView(context: Context) -> WKWebView {
+//        let webView = WKWebView()
+//        webView.navigationDelegate = context.coordinator
+//        loadCookies(into: webView)
+//        return webView
+//    }
+//
+//    func updateUIView(_ uiView: WKWebView, context: Context) {
+//        if let url = lastVisitedURL {
+//            let request = URLRequest(url: url)
+//            uiView.load(request)
+//        }
+//    }
+//
+//    func makeCoordinator() -> Coordinator {
+//        Coordinator(self)
+//    }
+//
+//    private func loadCookies(into webView: WKWebView) {
+//        if let cookies = HTTPCookieStorage.shared.cookies {
+//            for cookie in cookies {
+//                webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie)
+//            }
+//        }
+//    }
+//
+//    class Coordinator: NSObject, WKNavigationDelegate {
+//        var parent: WebView
+//
+//        init(_ parent: WebView) {
+//            self.parent = parent
+//        }
+//
+//        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+//            HTTPCookieStorage.shared.cookies?.forEach { cookie in
+//                webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie)
+//            }
+//            if let url = webView.url {
+//                UserDefaults.standard.set(url, forKey: "lastVisitedURL")
+//            }
+//        }
+//    }
+//}
+
+
+
