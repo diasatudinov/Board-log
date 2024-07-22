@@ -16,7 +16,7 @@ struct LoaderUIView: View {
     var body: some View {
         if isLoadingView {
             ZStack {
-                Image("background")
+                Image("background") 
                     .resizable()
                     .ignoresSafeArea()
                 
@@ -24,7 +24,7 @@ struct LoaderUIView: View {
                     Image("logo")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 230)
+                        .frame(width: 235)
                         .padding(.top, UIScreen.main.bounds.height / 4.8)
                     Spacer()
                     Text("LOADING...")
@@ -59,7 +59,7 @@ struct LoaderUIView: View {
             }
             
         } else {
-            if !isWeb {
+            if isWeb {
                 UserOnboardingUIView()
             } else {
                 ReviewOnboardingUIView()

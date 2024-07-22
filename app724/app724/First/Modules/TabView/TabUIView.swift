@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppMetricaCore
 
 struct TabUIView: View {
     @State var selectedTab = 0
@@ -84,6 +85,7 @@ struct TabUIView: View {
                 }
                 .onAppear {
                     loadProfile()
+                    AppMetrica.reportEvent(name: "did_show_main_screen")
                 }
             }
         }
