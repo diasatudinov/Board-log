@@ -9,7 +9,7 @@ import SwiftUI
 import WebKit
 
 struct WebUIView: View {
-    @State private var lastVisitedURL: URL? = UserDefaults.standard.url(forKey: "lastVisitedURL") ?? URL(string: "https://default-url.com")
+    @State private var lastVisitedURL: URL? = UserDefaults.standard.url(forKey: "lastVisitedURL") ?? URL(string: "https://google.com")
     
     var body: some View {
         WebView(lastVisitedURL: $lastVisitedURL)
