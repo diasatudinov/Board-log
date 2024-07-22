@@ -119,7 +119,6 @@ struct ReviewOnboardingUIView: View {
                 loadProfile()
             }
             .sheet(isPresented: $showSheet) {
-                // Sheet content
                 SignUpUIView(isSignedUp: $signedUP)
             }
             

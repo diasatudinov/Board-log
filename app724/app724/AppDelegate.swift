@@ -15,14 +15,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     var errorMessage: String?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Perform setup tasks here
         
 //        Apphud.start(apiKey: "app_MqZYeTGkCQWTtAmAocW9JcBkhh7j3u")
 //        OneSignal.initialize("b3363ec1-8d0a-4115-9e1c-31a753b03dcd", withLaunchOptions: launchOptions)
 //        OneSignal.login(Apphud.userID())
 //        
 //        let configuration = AppMetricaConfiguration.init(apiKey: "api-key")
-        //AppMetrica.activate(with: configuration)
+        //AppMetrica.activate(with: configuration!)
 
         
         let apiService = ApiService()

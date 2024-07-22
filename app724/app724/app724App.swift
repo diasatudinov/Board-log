@@ -14,7 +14,7 @@ struct app724App: App {
     init() {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UIColor.clear // Set background color if needed
+            appearance.backgroundColor = UIColor.clear
             appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
             
             UINavigationBar.appearance().standardAppearance = appearance

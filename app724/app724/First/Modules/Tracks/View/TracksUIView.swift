@@ -89,11 +89,9 @@ struct TracksUIView: View {
                 }
                 )
             }.sheet(isPresented: $showAddTrackSheet) {
-                // Sheet content
                 AddNewTrackUIView(viewModel: viewModel, isAddTrackOpen: $showAddTrackSheet)
             }
             .sheet(item: $selectedTrack) { track in
-                // Sheet content
                 TrackDetailsUIView(viewModel: viewModel, track: track)
                 
                 

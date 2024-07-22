@@ -88,11 +88,9 @@ struct ReservationsUIView: View {
                 }
                 )
             }.sheet(isPresented: $showAddTrackSheet) {
-                // Sheet content
                 AddResortUIView(viewModel: viewModel, isAddResortOpen: $showAddTrackSheet)
             }
             .sheet(item: $selectedResort) { resort in
-                // Sheet content
                 ResortDetailsUIView(viewModel: viewModel, resort: resort)
                 
                 

@@ -100,9 +100,6 @@ struct StarRating: View {
                 Image(systemName: index <= resort.rating ? "star.fill" : "star.fill")
                     .font(.system(size: 20))
                     .foregroundColor(index <= resort.rating ? .onboardingButton : .gray.opacity(0.3))
-//                    .onTapGesture {
-//                        viewModel.updateRating(for: resort, rating: index)
-//                    }
             }
         }
     }

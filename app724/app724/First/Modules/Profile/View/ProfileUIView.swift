@@ -200,7 +200,6 @@ struct ProfileUIView: View {
                             }
                         } else {
                             LazyVGrid(columns: Array(repeating: GridItem(.fixed(108), spacing: 13), count: 3), spacing: 13) {
-                                // Add Image Button
                                 Button(action: {
                                     showingImagePicker = true
                                 }) {
@@ -218,7 +217,6 @@ struct ProfileUIView: View {
                                 .buttonStyle(PlainButtonStyle())
                                 
                                 
-                                // Display Images
                                 ForEach(profileVM.images, id: \.self) { image in
                                     Image(uiImage: image)
                                         .resizable()
@@ -265,7 +263,7 @@ struct ImagePicker2: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var configuration = PHPickerConfiguration()
         configuration.filter = .images
-        configuration.selectionLimit = 0 // 0 means no limit
+        configuration.selectionLimit = 0
         
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = context.coordinator

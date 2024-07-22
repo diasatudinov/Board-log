@@ -62,7 +62,6 @@ struct EditProfileUIView: View {
                         }
                     }.padding(.bottom, 24).padding(.top, 28)
                         .onTapGesture {
-                            //BrowseViewControllerStrangeThing()
                             if editingProfile {
                                 isShowingImagePicker = true
                             }

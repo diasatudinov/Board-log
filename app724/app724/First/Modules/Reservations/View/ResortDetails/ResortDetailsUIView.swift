@@ -69,10 +69,6 @@ struct ResortDetailsUIView: View {
                             }
                         }
                     }.padding(.bottom, 24).padding(.horizontal)
-                        .onTapGesture {
-                           // isShowingImagePicker = true
-                        }
-                    
                     
                     VStack(spacing: 10) {
                         ZStack {

@@ -209,7 +209,6 @@ struct StarRatingAddTrack: View {
                     .font(.system(size: 30))
                     .foregroundColor(index <= rating ? .onboardingButton : .gray.opacity(0.3))
                     .onTapGesture {
-                        //viewModel.updateRating(for: resort, rating: index)
                         rating = index
                     }
             }

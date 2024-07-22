@@ -69,9 +69,6 @@ struct TrackDetailsUIView: View {
                             }
                         }
                     }.padding(.bottom, 24).padding(.horizontal)
-                        .onTapGesture {
-                           // isShowingImagePicker = true
-                        }
                     
                     
                     VStack(spacing: 10) {

@@ -58,7 +58,6 @@ struct SignUpUIView: View {
                         }
                     }.padding(.bottom, 24)
                         .onTapGesture {
-                            //BrowseViewControllerStrangeThing()
                             isShowingImagePicker = true
                         }
                     
