@@ -11,7 +11,7 @@ class SettingsViewModel: ObservableObject {
     let standardNavBarHeight = UIScreen.main.bounds.height / 5.5
     
     func shareApp() {
-        guard let url = URL(string: "https://apps.apple.com/app/idYOUR_APP_ID") else { return }
+        guard let url = URL(string: "https://apps.apple.com/app/board-log/id6575374222") else { return }
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
@@ -21,14 +21,14 @@ class SettingsViewModel: ObservableObject {
     }
     
     func rateApp() {
-        guard let url = URL(string: "https://apps.apple.com/app/gear-up-playbook/id6511246643") else { return }
+        guard let url = URL(string: "https://apps.apple.com/app/board-log/id6575374222") else { return }
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
     func openUsagePolicy() {
-        guard let url = URL(string: "https://www.termsfeed.com/live/ea4add31-897e-48b9-bf34-e3ede7780771") else { return }
+        guard let url = URL(string: "https://www.termsfeed.com/live/7fc0ddbb-49fe-4605-9f10-ffa4877cb79a") else { return }
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }

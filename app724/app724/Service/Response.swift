@@ -8,29 +8,29 @@
 import Foundation
 
 struct ApiResponse: Codable {
-    let isExact: String
-    let copyable: String
-    let resizable: [String]
-    let finished: String
-    let focusable: Bool
-    let isSimilar: String
-    let hasSibling: String
-    let isCurrent: String
-    let nonreloadable: Bool
-    let isUppercase: Int
-    let isRandom: Bool
-
+    let isValid: String
+    let active: String
+    let hasParent: String
+    let drawer: String
+    let rotatable: [String]
+    let isCurrent: [String]
+    let isImproper: String
+    let isApproved: String?  
+    let nonremovable: Int
+    let sortable: Bool
+    let uiColorTheme: Bool
+    
     enum CodingKeys: String, CodingKey {
-        case isExact = "is_exact"
-        case copyable
-        case resizable
-        case finished
-        case focusable
-        case isSimilar = "is_similar"
-        case hasSibling = "has_sibling"
+        case isValid = "is_valid"
+        case active
+        case hasParent = "has_parent"
+        case drawer
+        case rotatable
         case isCurrent = "is_current"
-        case nonreloadable
-        case isUppercase = "is_uppercase"
-        case isRandom = "is_random"
+        case isImproper = "is_improper"
+        case isApproved = "is_approved"
+        case nonremovable
+        case sortable
+        case uiColorTheme = "ui_color_theme"
     }
 }

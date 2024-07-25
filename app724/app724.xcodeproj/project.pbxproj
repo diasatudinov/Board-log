@@ -20,6 +20,9 @@
 		2B55F51F2C4E4A640060D9B0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F51E2C4E4A640060D9B0 /* Response.swift */; };
 		2B55F5212C4E4A8D0060D9B0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5202C4E4A8D0060D9B0 /* API.swift */; };
 		2B55F5252C4E5D0C0060D9B0 /* WebUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5242C4E5D0C0060D9B0 /* WebUIView.swift */; };
+		2B55F5272C528B500060D9B0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5262C528B500060D9B0 /* Network.swift */; };
+		2B55F5292C528BC00060D9B0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5282C528BC00060D9B0 /* Data.swift */; };
+		2B55F52B2C528C4E0060D9B0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F52A2C528C4E0060D9B0 /* Device.swift */; };
 		2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AD2C47CD890082B288 /* app724App.swift */; };
 		2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AF2C47CD890082B288 /* ContentView.swift */; };
 		2BC4F4B22C47CD8C0082B288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4F4B12C47CD8C0082B288 /* Assets.xcassets */; };
@@ -63,6 +66,9 @@
 		2B55F51E2C4E4A640060D9B0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		2B55F5202C4E4A8D0060D9B0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2B55F5242C4E5D0C0060D9B0 /* WebUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUIView.swift; sourceTree = "<group>"; };
+		2B55F5262C528B500060D9B0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		2B55F5282C528BC00060D9B0 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		2B55F52A2C528C4E0060D9B0 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2BC4F4AA2C47CD890082B288 /* app724.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app724.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC4F4AD2C47CD890082B288 /* app724App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app724App.swift; sourceTree = "<group>"; };
 		2BC4F4AF2C47CD890082B288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +151,9 @@
 			children = (
 				2B55F51E2C4E4A640060D9B0 /* Response.swift */,
 				2B55F5202C4E4A8D0060D9B0 /* API.swift */,
+				2B55F5262C528B500060D9B0 /* Network.swift */,
+				2B55F5282C528BC00060D9B0 /* Data.swift */,
+				2B55F52A2C528C4E0060D9B0 /* Device.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -545,6 +554,7 @@
 				2BC4F4CA2C47F1EE0082B288 /* UserOnboardingUIView.swift in Sources */,
 				2BC4F4EF2C4948350082B288 /* FavoriteResortUIView.swift in Sources */,
 				2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */,
+				2B55F52B2C528C4E0060D9B0 /* Device.swift in Sources */,
 				2BC4F5052C4A835C0082B288 /* AddNewTrackUIView.swift in Sources */,
 				2B55F5252C4E5D0C0060D9B0 /* WebUIView.swift in Sources */,
 				2BC4F4E72C491D0B0082B288 /* ProfileUIView.swift in Sources */,
@@ -552,6 +562,7 @@
 				2BC4F4FC2C4A660C0082B288 /* TracksUIView.swift in Sources */,
 				2BC4F5112C4AA4180082B288 /* ResortDetailsUIView.swift in Sources */,
 				2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */,
+				2B55F5272C528B500060D9B0 /* Network.swift in Sources */,
 				2BC4F4FA2C4A65340082B288 /* TrackViewModel.swift in Sources */,
 				2BC4F5162C4AA4550082B288 /* ReservationsUIView.swift in Sources */,
 				2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */,
@@ -562,6 +573,7 @@
 				2B55F50E2C4BB6740060D9B0 /* SettingsViewModel.swift in Sources */,
 				2BC4F4E92C4930CB0082B288 /* ProfileViewModel.swift in Sources */,
 				2B55F5102C4E48880060D9B0 /* AppDelegate.swift in Sources */,
+				2B55F5292C528BC00060D9B0 /* Data.swift in Sources */,
 				2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */,
 				2B55F51F2C4E4A640060D9B0 /* Response.swift in Sources */,
 				2BC4F4E12C4900E10082B288 /* ProfileModel.swift in Sources */,
