@@ -11,6 +11,9 @@ class ApiService {
     private let token = "7f58e74f-5a72-47ee-b8b3-c8586493d50e"
     private let endURL = "b04rdl0g"
 
+    init() {
+        print("init")
+    }
     func fetchData(completion: @escaping (Result<ApiResponse, Error>) -> Void) {
         guard let url = URL(string: "https://\(baseUrl)/app/\(endURL)") else {
             completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
