@@ -11,12 +11,12 @@ import AppMetricaCore
 struct TabUIView: View {
     @State var selectedTab = 0
     @State var image: UIImage?
-    private let tabs = ["Home", "Search", "Profile", "Settings"]
+    private let tabs = ["Home", "Search", "Profile", "Training", "Settings"]
     @State private var profile: ProfileModel?
     @ObservedObject var profileVM = ProfileViewModel()
     @ObservedObject var trackVM = TrackViewModel()
     @ObservedObject var resortVM = ResortViewModel()
-    
+    @ObservedObject var trainingVM = TrainingViewModel()
     
     var body: some View {
         ZStack {
@@ -29,6 +29,8 @@ struct TabUIView: View {
             case 2:
                 ReservationsUIView(viewModel: resortVM)
             case 3:
+                TrainingUIView(viewModel: trainingVM)
+            case 4:
                 SettingsUIView()
             default:
                 Text("default")
@@ -41,7 +43,7 @@ struct TabUIView: View {
                         RoundedRectangle(cornerRadius: 61)
                             .fill(Color.tabViewIcon)
                             .frame(height: 70)
-                            .padding(.horizontal, 68)
+                            .padding(.horizontal, 36)
                         
                         HStack(spacing: 9) {
                             ForEach(0..<tabs.count) { index in
@@ -96,7 +98,8 @@ struct TabUIView: View {
         case 0: return "house.fill"
         case 1: return "flag.and.flag.filled.crossed"
         case 2: return "house.fill"
-        case 3: return "gearshape.fill"
+        case 3: return "bolt.fill"
+        case 4: return "gearshape.fill"
         default: return ""
         }
     }

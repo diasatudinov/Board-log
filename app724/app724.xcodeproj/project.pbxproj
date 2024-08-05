@@ -23,6 +23,10 @@
 		2B55F5272C528B500060D9B0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5262C528B500060D9B0 /* Network.swift */; };
 		2B55F5292C528BC00060D9B0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5282C528BC00060D9B0 /* Data.swift */; };
 		2B55F52B2C528C4E0060D9B0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F52A2C528C4E0060D9B0 /* Device.swift */; };
+		2B55F5B62C612E970060D9B0 /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5B52C612E970060D9B0 /* TrainingViewModel.swift */; };
+		2B55F5B82C612EB00060D9B0 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5B72C612EB00060D9B0 /* Training.swift */; };
+		2B55F5BA2C612EF80060D9B0 /* TrainingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5B92C612EF80060D9B0 /* TrainingUIView.swift */; };
+		2B55F5BC2C6134F20060D9B0 /* NewTrainingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5BB2C6134F20060D9B0 /* NewTrainingUIView.swift */; };
 		2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AD2C47CD890082B288 /* app724App.swift */; };
 		2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AF2C47CD890082B288 /* ContentView.swift */; };
 		2BC4F4B22C47CD8C0082B288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4F4B12C47CD8C0082B288 /* Assets.xcassets */; };
@@ -68,6 +72,10 @@
 		2B55F5262C528B500060D9B0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		2B55F5282C528BC00060D9B0 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2B55F52A2C528C4E0060D9B0 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		2B55F5B52C612E970060D9B0 /* TrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
+		2B55F5B72C612EB00060D9B0 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
+		2B55F5B92C612EF80060D9B0 /* TrainingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingUIView.swift; sourceTree = "<group>"; };
+		2B55F5BB2C6134F20060D9B0 /* NewTrainingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrainingUIView.swift; sourceTree = "<group>"; };
 		2BC4F4AA2C47CD890082B288 /* app724.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app724.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC4F4AD2C47CD890082B288 /* app724App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app724App.swift; sourceTree = "<group>"; };
 		2BC4F4AF2C47CD890082B288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +172,41 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		2B55F5B12C612E660060D9B0 /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5B42C612E780060D9B0 /* Model */,
+				2B55F5B32C612E740060D9B0 /* View */,
+				2B55F5B22C612E6C0060D9B0 /* ModelView */,
+			);
+			path = Training;
+			sourceTree = "<group>";
+		};
+		2B55F5B22C612E6C0060D9B0 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5B52C612E970060D9B0 /* TrainingViewModel.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		2B55F5B32C612E740060D9B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5B92C612EF80060D9B0 /* TrainingUIView.swift */,
+				2B55F5BB2C6134F20060D9B0 /* NewTrainingUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B55F5B42C612E780060D9B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B55F5B72C612EB00060D9B0 /* Training.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2BC4F4A12C47CD880082B288 = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +284,7 @@
 		2BC4F4C32C47E6970082B288 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2B55F5B12C612E660060D9B0 /* Training */,
 				2B55F5082C4BB6400060D9B0 /* Settings */,
 				2BC4F5092C4AA2B30082B288 /* Reservations */,
 				2BC4F4F32C4A638A0082B288 /* Tracks */,
@@ -540,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BC4F4CA2C47F1EE0082B288 /* UserOnboardingUIView.swift in Sources */,
+				2B55F5BC2C6134F20060D9B0 /* NewTrainingUIView.swift in Sources */,
 				2BC4F4EF2C4948350082B288 /* FavoriteResortUIView.swift in Sources */,
 				2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */,
 				2B55F52B2C528C4E0060D9B0 /* Device.swift in Sources */,
@@ -549,9 +594,11 @@
 				2B55F5052C4AAD410060D9B0 /* ResortCellUIView.swift in Sources */,
 				2BC4F4FC2C4A660C0082B288 /* TracksUIView.swift in Sources */,
 				2BC4F5112C4AA4180082B288 /* ResortDetailsUIView.swift in Sources */,
+				2B55F5BA2C612EF80060D9B0 /* TrainingUIView.swift in Sources */,
 				2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */,
 				2B55F5272C528B500060D9B0 /* Network.swift in Sources */,
 				2BC4F4FA2C4A65340082B288 /* TrackViewModel.swift in Sources */,
+				2B55F5B82C612EB00060D9B0 /* Training.swift in Sources */,
 				2BC4F5162C4AA4550082B288 /* ReservationsUIView.swift in Sources */,
 				2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */,
 				2BC4F4FE2C4A67830082B288 /* TrackCellUIView.swift in Sources */,
@@ -562,6 +609,7 @@
 				2BC4F4E92C4930CB0082B288 /* ProfileViewModel.swift in Sources */,
 				2B55F5102C4E48880060D9B0 /* AppDelegate.swift in Sources */,
 				2B55F5292C528BC00060D9B0 /* Data.swift in Sources */,
+				2B55F5B62C612E970060D9B0 /* TrainingViewModel.swift in Sources */,
 				2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */,
 				2B55F51F2C4E4A640060D9B0 /* Response.swift in Sources */,
 				2BC4F4E12C4900E10082B288 /* ProfileModel.swift in Sources */,
