@@ -1,5 +1,5 @@
 //
-//  TrainingDetailsUIView.swift
+//  TrainingDetailsDefenderCoolUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 06.08.2024.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct TrainingDetailsUIView: View {
+struct TrainingDetailsDefenderCoolUIView: View {
     @ObservedObject var viewModel: TrainingViewModel
-    @State var training: Training
+    @State var training: TrainingBiggest
 
     let allEmojis = ["🤩", "🙂", "🥲", "🥶"]
     @Environment(\.presentationMode) var presentationMode
@@ -175,5 +175,5 @@ struct TrainingDetailsUIView: View {
 }
 
 #Preview {
-    TrainingDetailsUIView(viewModel: TrainingViewModel(), training: Training(emoji: "🥶", name: "AAA", date: "aaa", maxSpeed: "12", numDescents: "23", numTricks: "5"))
+    TrainingDetailsDefenderCoolUIView(viewModel: TrainingViewModel(), training: TrainingBiggest(emoji: "🥶", name: "AAA", date: "aaa", maxSpeed: "12", numDescents: "23", numTricks: "5"))
 }

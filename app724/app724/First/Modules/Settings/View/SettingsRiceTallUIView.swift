@@ -1,5 +1,5 @@
 //
-//  SettingsUIView.swift
+//  SettingsRiceTallUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 20.07.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsUIView: View {
+struct SettingsRiceTallUIView: View {
     @ObservedObject var viewModel = SettingsViewModel()
     
     var body: some View {
@@ -129,6 +129,6 @@ struct SettingsUIView: View {
 }
 
 #Preview {
-    SettingsUIView()
+    SettingsRiceTallUIView()
 }
 

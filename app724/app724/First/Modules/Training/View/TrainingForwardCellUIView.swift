@@ -1,5 +1,5 @@
 //
-//  TrainingCellUIView.swift
+//  TrainingForwardCellUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 06.08.2024.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct TrainingCellUIView: View {
+struct TrainingForwardCellUIView: View {
     @ObservedObject var viewModel: TrainingViewModel
-    @State var training: Training
+    @State var training: TrainingBiggest
     
     var body: some View {
         ZStack {
@@ -123,7 +123,7 @@ struct TrainingCellUIView: View {
 
 
 #Preview {
-    TrainingCellUIView(viewModel: TrainingViewModel(), training: Training(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16"))
+    TrainingForwardCellUIView(viewModel: TrainingViewModel(), training: TrainingBiggest(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16"))
 }
 
 

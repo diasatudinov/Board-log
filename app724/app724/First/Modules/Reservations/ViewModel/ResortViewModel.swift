@@ -8,7 +8,7 @@
 import SwiftUI
 
 class ResortViewModel: ObservableObject {
-    @Published var resorts: [Resort] = [] {
+    @Published var resorts: [ResortNatural] = [] {
         didSet {
             saveResorts()
         }
@@ -20,7 +20,7 @@ class ResortViewModel: ObservableObject {
         loadResorts()
     }
     
-    func addResort(_ resort: Resort) {
+    func addResort(_ resort: ResortNatural) {
         resorts.append(resort)
     }
     
@@ -29,19 +29,19 @@ class ResortViewModel: ObservableObject {
         resorts.remove(at: index)
     }
     
-    func toggleFavorite(for resort: Resort) {
+    func toggleFavorite(for resort: ResortNatural) {
         if let index = resorts.firstIndex(where: { $0.id == resort.id }) {
             resorts[index].isFavorite.toggle()
         }
     }
     
-    func updateRating(for resort: Resort, rating: Int) {
+    func updateRating(for resort: ResortNatural, rating: Int) {
         if let index = resorts.firstIndex(where: { $0.id == resort.id }) {
             resorts[index].rating = rating
         }
     }
     
-    var favoriteResorts: [Resort] {
+    var favoriteResorts: [ResortNatural] {
         resorts.filter { $0.isFavorite }
     }
     
@@ -70,7 +70,7 @@ class ResortViewModel: ObservableObject {
         let decoder = JSONDecoder()
         do {
             let data = try Data(contentsOf: resortsFilePath())
-            resorts = try decoder.decode([Resort].self, from: data)
+            resorts = try decoder.decode([ResortNatural].self, from: data)
         } catch {
             print("Failed to load players: \(error.localizedDescription)")
         }

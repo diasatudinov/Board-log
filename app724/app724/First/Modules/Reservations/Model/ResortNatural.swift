@@ -1,5 +1,5 @@
 //
-//  Track.swift
+//  ResortNatural.swift
 //  app724
 //
 //  Created by Dias Atudinov on 19.07.2024.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct Track: Identifiable, Hashable, Codable {
+struct ResortNatural: Identifiable, Codable, Hashable {
     let id = UUID()
     var imageData: Data?
     var name: String
-    var length: String
     var location: String
+    var price: String
     var rating: Int
     var isFavorite: Bool = false
     
     enum CodingKeys: String, CodingKey {
-        case id, imageData, name, length, location, rating, isFavorite
+        case id, imageData, name, location, price, rating, isFavorite
     }
     
     var image: UIImage? {

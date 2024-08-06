@@ -25,13 +25,13 @@ struct TabUIView: View {
             case 0:
                 ProfileUIView(profileVM: profileVM, trackVM: trackVM, resortVM: resortVM)
             case 1:
-                TracksUIView(viewModel: trackVM)
+                TracksCoolUIView(viewModel: trackVM)
             case 2:
-                ReservationsUIView(viewModel: resortVM)
+                ReservationsBestLordUIView(viewModel: resortVM)
             case 3:
-                TrainingUIView(viewModel: trainingVM)
+                TrainingStrongestUIView(viewModel: trainingVM)
             case 4:
-                SettingsUIView()
+                SettingsRiceTallUIView()
             default:
                 Text("default")
             }

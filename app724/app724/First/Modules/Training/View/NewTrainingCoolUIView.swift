@@ -1,5 +1,5 @@
 //
-//  NewTrainingUIView.swift
+//  NewTrainingCoolUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 05.08.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewTrainingUIView: View {
+struct NewTrainingCoolUIView: View {
     @ObservedObject var viewModel: TrainingViewModel
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
@@ -179,7 +179,7 @@ struct NewTrainingUIView: View {
                     
                     if !emoji.isEmpty && !name.isEmpty && !date.isEmpty && !maxSpeed.isEmpty && !numDescents.isEmpty && !numTricks.isEmpty{
                         
-                            let training = Training(emoji: emoji, name: name, date: date, maxSpeed: maxSpeed, numDescents: numDescents, numTricks: numTricks)
+                            let training = TrainingBiggest(emoji: emoji, name: name, date: date, maxSpeed: maxSpeed, numDescents: numDescents, numTricks: numTricks)
                             viewModel.addTraining(training)
                         
                         isAddTrainingOpen = false
@@ -207,7 +207,7 @@ struct NewTrainingUIView: View {
 }
 
 #Preview {
-    NewTrainingUIView(viewModel: TrainingViewModel(), isAddTrainingOpen: .constant(true))
+    NewTrainingCoolUIView(viewModel: TrainingViewModel(), isAddTrainingOpen: .constant(true))
 }
 
 //@State private var showEmojis = false

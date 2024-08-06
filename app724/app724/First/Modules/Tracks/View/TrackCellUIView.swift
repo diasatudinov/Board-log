@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TrackCellUIView: View {
     @ObservedObject var viewModel: TrackViewModel
-    @State var track: Track
+    @State var track: TrackBestReal
     
     var body: some View {
         ZStack {
@@ -92,7 +92,7 @@ struct TrackCellUIView: View {
 
 struct StarRating: View {
     @ObservedObject var viewModel: TrackViewModel
-    var resort: Track
+    var resort: TrackBestReal
     
     var body: some View {
         HStack {
@@ -105,5 +105,5 @@ struct StarRating: View {
     }
 }
 #Preview {
-    TrackCellUIView(viewModel: TrackViewModel(), track: Track(name: "Beaver Creek", length: "1050m", location: "USA, Colorado", rating: 2))
+    TrackCellUIView(viewModel: TrackViewModel(), track: TrackBestReal(name: "Beaver Creek", length: "1050m", location: "USA, Colorado", rating: 2))
 }

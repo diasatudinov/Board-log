@@ -1,29 +1,30 @@
 //
-//  ReservationsUIView.swift
+//  TrainingStrongestUIView.swift
 //  app724
 //
-//  Created by Dias Atudinov on 19.07.2024.
+//  Created by Dias Atudinov on 05.08.2024.
 //
 
 import SwiftUI
 
-struct ReservationsUIView: View {
-    @ObservedObject var viewModel: ResortViewModel
-    @State private var showAddTrackSheet = false
-    @State private var selectedResort: Resort?
+struct TrainingStrongestUIView: View {
+    @ObservedObject var viewModel: TrainingViewModel
+    @State private var showAddTrainingSheet = false
+    @State private var selectedTraining: TrainingBiggest?
     var body: some View {
         NavigationView {
             ZStack {
                 Color.background.ignoresSafeArea()
                 VStack {
                     HStack {
-                        Text("Reservations")
+                        Text("Training")
                             .font(.largeTitle)
                             .foregroundColor(.white)
                             .bold()
                         Spacer()
                     }.padding(.horizontal)
-                    if viewModel.resorts.isEmpty {
+                    
+                    if viewModel.trainings.isEmpty {
                         VStack {
                             ZStack {
                                 Rectangle()
@@ -32,18 +33,18 @@ struct ReservationsUIView: View {
                                     .foregroundColor(.signupTextField)
                                     .padding(.horizontal)
                                 VStack(spacing: 0) {
-                                    Image(systemName: "house")
+                                    Image(systemName: "bolt.fill")
                                         .font(.system(size: 28))
                                         .foregroundColor(.favoritesNumber.opacity(0.5))
                                         .padding(.top, 10)
                                         .padding(.bottom, 12)
-                                    Text("Add a new reservation!")
+                                    Text("Add a new workout!")
                                         .multilineTextAlignment(.center)
                                         .font(.system(size: 17).weight(.semibold))
                                         .foregroundColor(.white)
                                         .padding(.bottom, 25)
                                     Button {
-                                        showAddTrackSheet = true
+                                        showAddTrainingSheet = true
                                     } label: {
                                         ZStack(alignment: .center) {
                                             Rectangle()
@@ -68,10 +69,10 @@ struct ReservationsUIView: View {
                         }
                     } else {
                         ScrollView {
-                            ForEach(viewModel.resorts, id: \.self){ resort in
-                                ResortCellUIView(viewModel: viewModel, resort: resort).padding(.bottom, 13)
+                            ForEach(viewModel.trainings, id: \.self){ training in
+                                TrainingForwardCellUIView(viewModel: viewModel, training: training).padding(.bottom, 13)
                                     .onTapGesture {
-                                        selectedResort = resort
+                                        selectedTraining = training
                                     }
                             }
                         }.padding(.horizontal).padding(.bottom, 40)
@@ -79,7 +80,7 @@ struct ReservationsUIView: View {
                 }
                 .navigationBarItems(trailing:
                                         Button {
-                    showAddTrackSheet = true
+                    showAddTrainingSheet = true
                 } label: {
                     Image(systemName: "plus")
                         .foregroundColor(.onboardingButton)
@@ -87,11 +88,13 @@ struct ReservationsUIView: View {
                         
                 }
                 )
-            }.sheet(isPresented: $showAddTrackSheet) {
-                AddResortUIView(viewModel: viewModel, isAddResortOpen: $showAddTrackSheet)
             }
-            .sheet(item: $selectedResort) { resort in
-                ResortDetailsUIView(viewModel: viewModel, resort: resort)
+            .sheet(isPresented: $showAddTrainingSheet) {
+                
+                NewTrainingCoolUIView(viewModel: viewModel, isAddTrainingOpen: $showAddTrainingSheet)
+            }
+            .sheet(item: $selectedTraining) { training in
+                TrainingDetailsDefenderCoolUIView(viewModel: viewModel, training: training)
                 
                 
             }
@@ -101,5 +104,5 @@ struct ReservationsUIView: View {
 }
 
 #Preview {
-    ReservationsUIView(viewModel: ResortViewModel())
+    TrainingStrongestUIView(viewModel: TrainingViewModel())
 }

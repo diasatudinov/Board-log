@@ -1,5 +1,5 @@
 //
-//  TracksUIView.swift
+//  ReservationsBestLordUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 19.07.2024.
@@ -7,24 +7,23 @@
 
 import SwiftUI
 
-struct TracksUIView: View {
-    @ObservedObject var viewModel: TrackViewModel
+struct ReservationsBestLordUIView: View {
+    @ObservedObject var viewModel: ResortViewModel
     @State private var showAddTrackSheet = false
-    @State private var selectedTrack: Track?
+    @State private var selectedResort: ResortNatural?
     var body: some View {
         NavigationView {
             ZStack {
                 Color.background.ignoresSafeArea()
                 VStack {
                     HStack {
-                        Text("Tracks")
+                        Text("Reservations")
                             .font(.largeTitle)
                             .foregroundColor(.white)
                             .bold()
                         Spacer()
                     }.padding(.horizontal)
-                    
-                    if viewModel.tracks.isEmpty {
+                    if viewModel.resorts.isEmpty {
                         VStack {
                             ZStack {
                                 Rectangle()
@@ -33,12 +32,12 @@ struct TracksUIView: View {
                                     .foregroundColor(.signupTextField)
                                     .padding(.horizontal)
                                 VStack(spacing: 0) {
-                                    Image(systemName: "flag.and.flag.filled.crossed")
+                                    Image(systemName: "house")
                                         .font(.system(size: 28))
                                         .foregroundColor(.favoritesNumber.opacity(0.5))
                                         .padding(.top, 10)
                                         .padding(.bottom, 12)
-                                    Text("Add a new track!")
+                                    Text("Add a new reservation!")
                                         .multilineTextAlignment(.center)
                                         .font(.system(size: 17).weight(.semibold))
                                         .foregroundColor(.white)
@@ -69,10 +68,10 @@ struct TracksUIView: View {
                         }
                     } else {
                         ScrollView {
-                            ForEach(viewModel.tracks, id: \.self){ track in
-                                TrackCellUIView(viewModel: viewModel, track: track).padding(.bottom, 13)
+                            ForEach(viewModel.resorts, id: \.self){ resort in
+                                ResortShipCowCellUIView(viewModel: viewModel, resort: resort).padding(.bottom, 13)
                                     .onTapGesture {
-                                        selectedTrack = track
+                                        selectedResort = resort
                                     }
                             }
                         }.padding(.horizontal).padding(.bottom, 40)
@@ -89,10 +88,10 @@ struct TracksUIView: View {
                 }
                 )
             }.sheet(isPresented: $showAddTrackSheet) {
-                AddNewTrackUIView(viewModel: viewModel, isAddTrackOpen: $showAddTrackSheet)
+                AddResortCoolestUIView(viewModel: viewModel, isAddResortOpen: $showAddTrackSheet)
             }
-            .sheet(item: $selectedTrack) { track in
-                TrackDetailsUIView(viewModel: viewModel, track: track)
+            .sheet(item: $selectedResort) { resort in
+                ResortLowDetailsCowUIView(viewModel: viewModel, resort: resort)
                 
                 
             }
@@ -102,5 +101,5 @@ struct TracksUIView: View {
 }
 
 #Preview {
-    TracksUIView(viewModel: TrackViewModel())
+    ReservationsBestLordUIView(viewModel: ResortViewModel())
 }

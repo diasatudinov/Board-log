@@ -1,30 +1,30 @@
 //
-//  TrainingUIView.swift
+//  TracksCoolUIView.swift
 //  app724
 //
-//  Created by Dias Atudinov on 05.08.2024.
+//  Created by Dias Atudinov on 19.07.2024.
 //
 
 import SwiftUI
 
-struct TrainingUIView: View {
-    @ObservedObject var viewModel: TrainingViewModel
-    @State private var showAddTrainingSheet = false
-    @State private var selectedTraining: Training?
+struct TracksCoolUIView: View {
+    @ObservedObject var viewModel: TrackViewModel
+    @State private var showAddTrackSheet = false
+    @State private var selectedTrack: TrackBestReal?
     var body: some View {
         NavigationView {
             ZStack {
                 Color.background.ignoresSafeArea()
                 VStack {
                     HStack {
-                        Text("Training")
+                        Text("Tracks")
                             .font(.largeTitle)
                             .foregroundColor(.white)
                             .bold()
                         Spacer()
                     }.padding(.horizontal)
                     
-                    if viewModel.trainings.isEmpty {
+                    if viewModel.tracks.isEmpty {
                         VStack {
                             ZStack {
                                 Rectangle()
@@ -33,18 +33,18 @@ struct TrainingUIView: View {
                                     .foregroundColor(.signupTextField)
                                     .padding(.horizontal)
                                 VStack(spacing: 0) {
-                                    Image(systemName: "bolt.fill")
+                                    Image(systemName: "flag.and.flag.filled.crossed")
                                         .font(.system(size: 28))
                                         .foregroundColor(.favoritesNumber.opacity(0.5))
                                         .padding(.top, 10)
                                         .padding(.bottom, 12)
-                                    Text("Add a new workout!")
+                                    Text("Add a new track!")
                                         .multilineTextAlignment(.center)
                                         .font(.system(size: 17).weight(.semibold))
                                         .foregroundColor(.white)
                                         .padding(.bottom, 25)
                                     Button {
-                                        showAddTrainingSheet = true
+                                        showAddTrackSheet = true
                                     } label: {
                                         ZStack(alignment: .center) {
                                             Rectangle()
@@ -69,10 +69,10 @@ struct TrainingUIView: View {
                         }
                     } else {
                         ScrollView {
-                            ForEach(viewModel.trainings, id: \.self){ training in
-                                TrainingCellUIView(viewModel: viewModel, training: training).padding(.bottom, 13)
+                            ForEach(viewModel.tracks, id: \.self){ track in
+                                TrackCellUIView(viewModel: viewModel, track: track).padding(.bottom, 13)
                                     .onTapGesture {
-                                        selectedTraining = training
+                                        selectedTrack = track
                                     }
                             }
                         }.padding(.horizontal).padding(.bottom, 40)
@@ -80,7 +80,7 @@ struct TrainingUIView: View {
                 }
                 .navigationBarItems(trailing:
                                         Button {
-                    showAddTrainingSheet = true
+                    showAddTrackSheet = true
                 } label: {
                     Image(systemName: "plus")
                         .foregroundColor(.onboardingButton)
@@ -88,13 +88,11 @@ struct TrainingUIView: View {
                         
                 }
                 )
+            }.sheet(isPresented: $showAddTrackSheet) {
+                AddNewUnitedTrackUIView(viewModel: viewModel, isAddTrackOpen: $showAddTrackSheet)
             }
-            .sheet(isPresented: $showAddTrainingSheet) {
-                
-                NewTrainingUIView(viewModel: viewModel, isAddTrainingOpen: $showAddTrainingSheet)
-            }
-            .sheet(item: $selectedTraining) { training in
-                TrainingDetailsUIView(viewModel: viewModel, training: training)
+            .sheet(item: $selectedTrack) { track in
+                TrackLongWayDetailsUIView(viewModel: viewModel, track: track)
                 
                 
             }
@@ -104,5 +102,5 @@ struct TrainingUIView: View {
 }
 
 #Preview {
-    TrainingUIView(viewModel: TrainingViewModel())
+    TracksCoolUIView(viewModel: TrackViewModel())
 }

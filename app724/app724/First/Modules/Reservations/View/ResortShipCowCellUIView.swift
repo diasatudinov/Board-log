@@ -1,5 +1,5 @@
 //
-//  ResortCellUIView.swift
+//  ResortShipCowCellUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 19.07.2024.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ResortCellUIView: View {
+struct ResortShipCowCellUIView: View {
     @ObservedObject var viewModel: ResortViewModel
-    @State var resort: Resort
+    @State var resort: ResortNatural
     
     var body: some View {
         ZStack {
@@ -92,7 +92,7 @@ struct ResortCellUIView: View {
                         .font(.system(size: 15).bold())
                         .foregroundColor(.white)
                     Spacer()
-                    StarResortRating(viewModel: viewModel, resort: resort)
+                    StarResortBestRating(viewModel: viewModel, resort: resort)
                 }.padding(.horizontal)
                 
             }
@@ -102,12 +102,12 @@ struct ResortCellUIView: View {
 }
 
 #Preview {
-    ResortCellUIView(viewModel: ResortViewModel(), resort: Resort(name: "Reservation 1", location: "Location 1", price: "100", rating: 5))
+    ResortShipCowCellUIView(viewModel: ResortViewModel(), resort: ResortNatural(name: "Reservation 1", location: "Location 1", price: "100", rating: 5))
 }
 
-struct StarResortRating: View {
+struct StarResortBestRating: View {
     @ObservedObject var viewModel: ResortViewModel
-    var resort: Resort
+    var resort: ResortNatural
     
     var body: some View {
         HStack {

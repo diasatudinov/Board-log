@@ -1,5 +1,5 @@
 //
-//  Training.swift
+//  TrainingBiggest.swift
 //  app724
 //
 //  Created by Dias Atudinov on 05.08.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Training: Identifiable, Hashable, Codable {
+struct TrainingBiggest: Identifiable, Hashable, Codable {
     let id = UUID()
     var emoji: String
     var name: String

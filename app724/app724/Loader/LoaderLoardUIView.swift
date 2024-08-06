@@ -1,5 +1,5 @@
 //
-//  LoaderUIView.swift
+//  LoaderLoardUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 17.07.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoaderUIView: View {
+struct LoaderLoardUIView: View {
     @State private var progress: Double = 0.0
     @State private var timer: Timer?
     @State private var isLoadingView: Bool = true
@@ -119,5 +119,5 @@ struct LoaderUIView: View {
 }
 
 #Preview {
-    LoaderUIView()
+    LoaderLoardUIView()
 }

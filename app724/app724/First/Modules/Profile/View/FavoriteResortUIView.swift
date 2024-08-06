@@ -58,7 +58,7 @@ struct FavoriteResortUIView: View {
             } else {
                 ScrollView {
                     ForEach(viewModel.favoriteResorts, id: \.self) { resort in
-                        ResortCellUIView(viewModel: viewModel, resort: resort)
+                        ResortShipCowCellUIView(viewModel: viewModel, resort: resort)
                             .padding(.bottom, 13)
                     }
                 }.padding(.horizontal)

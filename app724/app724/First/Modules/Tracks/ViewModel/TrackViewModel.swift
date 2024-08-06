@@ -9,7 +9,7 @@ import Foundation
 
 
 class TrackViewModel: ObservableObject {
-    @Published var tracks: [Track] = [] {
+    @Published var tracks: [TrackBestReal] = [] {
         didSet {
             saveTracks()
         }
@@ -21,7 +21,7 @@ class TrackViewModel: ObservableObject {
         loadTracks()
     }
     
-    func addTracks(_ track: Track) {
+    func addTracks(_ track: TrackBestReal) {
         tracks.append(track)
     }
     
@@ -30,19 +30,19 @@ class TrackViewModel: ObservableObject {
         tracks.remove(at: index)
     }
     
-    func toggleFavorite(for track: Track) {
+    func toggleFavorite(for track: TrackBestReal) {
         if let index = tracks.firstIndex(where: { $0.id == track.id }) {
             tracks[index].isFavorite.toggle()
         }
     }
     
-    func updateRating(for track: Track, rating: Int) {
+    func updateRating(for track: TrackBestReal, rating: Int) {
         if let index = tracks.firstIndex(where: { $0.id == track.id }) {
             tracks[index].rating = rating
         }
     }
     
-    var favoriteResorts: [Track] {
+    var favoriteResorts: [TrackBestReal] {
         tracks.filter { $0.isFavorite }
     }
     
@@ -71,7 +71,7 @@ class TrackViewModel: ObservableObject {
         let decoder = JSONDecoder()
         do {
             let data = try Data(contentsOf: tracksFilePath())
-            tracks = try decoder.decode([Track].self, from: data)
+            tracks = try decoder.decode([TrackBestReal].self, from: data)
         } catch {
             print("Failed to load players: \(error.localizedDescription)")
         }

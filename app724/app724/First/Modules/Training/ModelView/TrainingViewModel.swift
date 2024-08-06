@@ -8,9 +8,9 @@
 import Foundation
 
 class TrainingViewModel: ObservableObject {
-    @Published var trainings: [Training] = [
-        Training(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16"),
-        Training(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16")] {
+    @Published var trainings: [TrainingBiggest] = [
+        TrainingBiggest(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16"),
+        TrainingBiggest(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16")] {
         didSet {
             saveTraining()
         }
@@ -22,7 +22,7 @@ class TrainingViewModel: ObservableObject {
         loadTraining()
     }
     
-    func addTraining(_ training: Training) {
+    func addTraining(_ training: TrainingBiggest) {
         trainings.append(training)
     }
     
@@ -56,7 +56,7 @@ class TrainingViewModel: ObservableObject {
         let decoder = JSONDecoder()
         do {
             let data = try Data(contentsOf: trainingsFilePath())
-            trainings = try decoder.decode([Training].self, from: data)
+            trainings = try decoder.decode([TrainingBiggest].self, from: data)
         } catch {
             print("Failed to load players: \(error.localizedDescription)")
         }

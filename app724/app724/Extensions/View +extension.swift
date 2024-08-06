@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GlowBorder: ViewModifier {
+struct GlowBestBorderCool: ViewModifier {
     var color: Color
     var lineWidth: Int
     
@@ -26,6 +26,6 @@ struct GlowBorder: ViewModifier {
 
 extension View {
     func glowBorder(color: Color, lineWidth: Int) -> some View {
-        self.modifier(GlowBorder(color: color, lineWidth: lineWidth))
+        self.modifier(GlowBestBorderCool(color: color, lineWidth: lineWidth))
     }
 }

@@ -1,5 +1,5 @@
 //
-//  AddResortUIView.swift
+//  TrackLongWayDetailsUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 19.07.2024.
@@ -7,15 +7,17 @@
 
 import SwiftUI
 
-struct AddResortUIView: View {
-    @ObservedObject var viewModel: ResortViewModel
+struct TrackLongWayDetailsUIView: View {
+    @ObservedObject var viewModel: TrackViewModel
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
+    @State var track: TrackBestReal
     @State private var name = ""
-    @State private var price = "0"
+    @State private var length = ""
     @State private var location = ""
     @State private var rating: Int = 0
-    @Binding var isAddResortOpen: Bool
+    
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -29,14 +31,14 @@ struct AddResortUIView: View {
                     .foregroundColor(.gray)
                 
                 ScrollView {
-                    Text("New reservation")
+                    Text(track.name)
                         .fontWeight(.semibold)
                         .font(.system(size: 17))
                         .foregroundColor(.white)
                         .padding(.bottom, 25)
                     
                     ZStack {
-                        if let image = selectedImage {
+                        if let image = track.image {
                             Image(uiImage: image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -60,88 +62,56 @@ struct AddResortUIView: View {
                                         .resizable()
                                         .frame(width: 52, height: 52)
                                         .foregroundColor(Color.onboardingButton)
-                                    Text("Add a hotel photo!")
+                                    Text("Add a track photo!")
                                         .font(.system(size: 17, weight: .semibold))
                                         .foregroundColor(.white)
                                 }
                             }
                         }
                     }.padding(.bottom, 24).padding(.horizontal)
-                        .onTapGesture {
-                            isShowingImagePicker = true
-                        }
                     
                     
                     VStack(spacing: 10) {
-                        ZStack(alignment: .leading) {
-                            
-                            TextField("", text: $name)
-                                .padding()
-                                .background(Color.signupTextField)
-                                .foregroundColor(.white)
-                                .font(.system(size: 17, weight: .bold))
+                        ZStack {
+                            Rectangle()
                                 .cornerRadius(18)
-                            if name.isEmpty {
-                                Text("Reservations name")
-                                    .foregroundColor(.gray)
-                                    .padding(.horizontal, 16)
-                                    .allowsHitTesting(false)
-                            }
-                        }
-                        
-                        ZStack(alignment: .leading) {
-                            
-                            TextField("", text: $location)
-                                .padding()
-                                .background(Color.signupTextField)
-                                .foregroundColor(.white)
-                                .font(.system(size: 17, weight: .bold))
-                                .cornerRadius(18)
-                            if location.isEmpty {
-                                HStack(spacing: 4) {
-                                    Image(systemName: "mappin")
-                                        .foregroundColor(.onboardingButton)
-                                    Text("Location")
-                                        .foregroundColor(.gray)
-                                        .allowsHitTesting(false)
-                                }.padding(.horizontal, 16)
-                            }
-                        }
-                        
-                        ZStack(alignment: .leading) {
-                            Text("")
-                                .font(.system(size: 15))
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding(20)
-                                .background(Color.signupTextField)
-                                .cornerRadius(18)
+                                .foregroundColor(.signupTextField)
                             HStack {
-                                Spacer()
-                                TextField("", text: $price)
-                                    .multilineTextAlignment(.trailing)
-                                    .keyboardType(.decimalPad)
+                                Text(track.name)
                                     .padding()
                                     .foregroundColor(.white)
-                                    .font(.system(size: 17, weight: .bold))
-                                    .cornerRadius(18)
-                                    .padding(.trailing)
-                                
-                            }
-                            HStack {
+                                    .font(.system(size: 17))
                                 Spacer()
-                                Text("$")
-                                    .foregroundColor(.white)
-                                    
-                            }.padding()
-                            
-                                Text("Price per day:")
-                                    .foregroundColor(price.isEmpty ? .gray : .white)
-                                    .padding(.horizontal, 16)
-                                    .allowsHitTesting(false)
-                            
+                            }
                         }
-                           
+                        
+                        
+                        ZStack {
+                            Rectangle()
+                                .cornerRadius(18)
+                                .foregroundColor(.signupTextField)
+                            HStack {
+                                Text(track.length)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 17))
+                                Spacer()
+                            }
+                        }
+                        
+                        ZStack {
+                            Rectangle()
+                                .cornerRadius(18)
+                                .foregroundColor(.signupTextField)
+                            HStack(spacing: 4) {
+                                Image(systemName: "mappin")
+                                    .foregroundColor(.onboardingButton)
+                                Text(track.location)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 17))
+                                Spacer()
+                            }.padding()
+                        }
                         
                     }.padding(.horizontal)
                         .padding(.bottom, 20)
@@ -153,12 +123,12 @@ struct AddResortUIView: View {
                             .cornerRadius(12)
                         
                         VStack(spacing: 20) {
-                            Text("Rate the quality of the \nhousing provided:")
+                            Text("Rate the difficulty \nof the route:")
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 17, weight: .semibold))
                                 .foregroundColor(.white)
                             
-                            StarRatingAddResort(viewModel: viewModel, rating: $rating)
+                            StarRatingBestDetailsRealTrack(viewModel: viewModel, rating: track.rating)
                         }
                     }.padding(.horizontal)
                     
@@ -170,30 +140,21 @@ struct AddResortUIView: View {
                 Spacer()
                 
                 Button {
-                    
-                    if !name.isEmpty && !price.isEmpty && !location.isEmpty && rating != 0 {
-                        
-                        if let image = selectedImage {
-                            let resort = Resort(imageData: image.jpegData(compressionQuality: 1.0), name: name, location: location, price: price, rating: rating)
-                            viewModel.addResort(resort)
-                        } else {
-                            let resort = Resort(name: name, location: location, price: price, rating: rating)
-                            viewModel.addResort(resort)
-                        }
-                        isAddResortOpen = false
+                    if let index = viewModel.tracks.firstIndex(where: { $0.id == track.id  }) {
+                        viewModel.deleteTrack(at: index)
+                        presentationMode.wrappedValue.dismiss()
                     }
-                    
                 } label: {
                     ZStack(alignment: .center) {
                         Rectangle()
                             .frame(height: 54)
-                            .foregroundColor(Color.onboardingButton.opacity(!name.isEmpty && !price.isEmpty && !location.isEmpty && rating != 0 ? 1 : 0.5))
+                            .foregroundColor(Color.red)
                             .font(.system(size: 17, weight: .bold))
                             .cornerRadius(16)
                             .padding(.horizontal)
                         HStack(spacing: 4) {
-                            Image(systemName: "checkmark")
-                            Text("Save")
+                            Image(systemName: "trash.fill")
+                            Text("Delete")
                                 
                         }.font(.system(size: 17, weight: .semibold))
                             .foregroundColor(.onboardingButtonText)
@@ -212,22 +173,20 @@ struct AddResortUIView: View {
         }
     }
 }
+
 #Preview {
-    AddResortUIView(viewModel: ResortViewModel(), isAddResortOpen: .constant(true))
+    TrackLongWayDetailsUIView(viewModel: TrackViewModel(), track: TrackBestReal(name: "Track 1", length: "1050m", location: "USA, Colorado", rating: 4))
 }
 
-struct StarRatingAddResort: View {
-    @ObservedObject var viewModel: ResortViewModel
-    @Binding var rating: Int
+struct StarRatingBestDetailsRealTrack: View {
+    @ObservedObject var viewModel: TrackViewModel
+    @State var rating: Int
     var body: some View {
         HStack {
             ForEach(1...5, id: \.self) { index in
                 Image(systemName: index <= rating ? "star.fill" : "star.fill")
                     .font(.system(size: 30))
                     .foregroundColor(index <= rating ? .onboardingButton : .gray.opacity(0.3))
-                    .onTapGesture {
-                        rating = index
-                    }
             }
         }
     }

@@ -1,5 +1,5 @@
 //
-//  ResortDetailsUIView.swift
+//  ResortLowDetailsCowUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 19.07.2024.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ResortDetailsUIView: View {
+struct ResortLowDetailsCowUIView: View {
     @ObservedObject var viewModel: ResortViewModel
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
-    @State var resort: Resort
+    @State var resort: ResortNatural
     @State private var name = ""
     @State private var length = ""
     @State private var location = ""
@@ -178,7 +178,7 @@ struct ResortDetailsUIView: View {
 }
 
 #Preview {
-    ResortDetailsUIView(viewModel: ResortViewModel(), resort: Resort(name: "Reservation 1", location: "Location 1", price: "200", rating: 5))
+    ResortLowDetailsCowUIView(viewModel: ResortViewModel(), resort: ResortNatural(name: "Reservation 1", location: "Location 1", price: "200", rating: 5))
 }
 
 struct StarRatingDetailsResort: View {

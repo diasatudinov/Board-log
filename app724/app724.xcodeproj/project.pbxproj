@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B55F5052C4AAD410060D9B0 /* ResortCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5042C4AAD410060D9B0 /* ResortCellUIView.swift */; };
+		2B55F5052C4AAD410060D9B0 /* ResortShipCowCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5042C4AAD410060D9B0 /* ResortShipCowCellUIView.swift */; };
 		2B55F5072C4AAD530060D9B0 /* ResortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5062C4AAD530060D9B0 /* ResortViewModel.swift */; };
-		2B55F50B2C4BB6540060D9B0 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F50A2C4BB6540060D9B0 /* SettingsUIView.swift */; };
+		2B55F50B2C4BB6540060D9B0 /* SettingsRiceTallUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F50A2C4BB6540060D9B0 /* SettingsRiceTallUIView.swift */; };
 		2B55F50E2C4BB6740060D9B0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F50D2C4BB6740060D9B0 /* SettingsViewModel.swift */; };
 		2B55F5102C4E48880060D9B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F50F2C4E48880060D9B0 /* AppDelegate.swift */; };
 		2B55F5132C4E48B20060D9B0 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2B55F5122C4E48B20060D9B0 /* ApphudSDK */; };
@@ -24,16 +24,16 @@
 		2B55F5292C528BC00060D9B0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5282C528BC00060D9B0 /* Data.swift */; };
 		2B55F52B2C528C4E0060D9B0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F52A2C528C4E0060D9B0 /* Device.swift */; };
 		2B55F5B62C612E970060D9B0 /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5B52C612E970060D9B0 /* TrainingViewModel.swift */; };
-		2B55F5B82C612EB00060D9B0 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5B72C612EB00060D9B0 /* Training.swift */; };
-		2B55F5BA2C612EF80060D9B0 /* TrainingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5B92C612EF80060D9B0 /* TrainingUIView.swift */; };
-		2B55F5BC2C6134F20060D9B0 /* NewTrainingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5BB2C6134F20060D9B0 /* NewTrainingUIView.swift */; };
-		2B55F5BE2C6225190060D9B0 /* TrainingCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5BD2C6225190060D9B0 /* TrainingCellUIView.swift */; };
-		2B55F5C02C6249550060D9B0 /* TrainingDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5BF2C6249550060D9B0 /* TrainingDetailsUIView.swift */; };
+		2B55F5B82C612EB00060D9B0 /* TrainingBiggest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5B72C612EB00060D9B0 /* TrainingBiggest.swift */; };
+		2B55F5BA2C612EF80060D9B0 /* TrainingStrongestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5B92C612EF80060D9B0 /* TrainingStrongestUIView.swift */; };
+		2B55F5BC2C6134F20060D9B0 /* NewTrainingCoolUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5BB2C6134F20060D9B0 /* NewTrainingCoolUIView.swift */; };
+		2B55F5BE2C6225190060D9B0 /* TrainingForwardCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5BD2C6225190060D9B0 /* TrainingForwardCellUIView.swift */; };
+		2B55F5C02C6249550060D9B0 /* TrainingDetailsDefenderCoolUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55F5BF2C6249550060D9B0 /* TrainingDetailsDefenderCoolUIView.swift */; };
 		2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AD2C47CD890082B288 /* app724App.swift */; };
 		2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4AF2C47CD890082B288 /* ContentView.swift */; };
 		2BC4F4B22C47CD8C0082B288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4F4B12C47CD8C0082B288 /* Assets.xcassets */; };
 		2BC4F4B52C47CD8C0082B288 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4F4B42C47CD8C0082B288 /* Preview Assets.xcassets */; };
-		2BC4F4BF2C47D1BF0082B288 /* LoaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4BE2C47D1BF0082B288 /* LoaderUIView.swift */; };
+		2BC4F4BF2C47D1BF0082B288 /* LoaderLoardUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4BE2C47D1BF0082B288 /* LoaderLoardUIView.swift */; };
 		2BC4F4C22C47E0AC0082B288 /* View +extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4C12C47E0AC0082B288 /* View +extension.swift */; };
 		2BC4F4C72C47E7230082B288 /* ReviewOnboardingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4C62C47E7230082B288 /* ReviewOnboardingUIView.swift */; };
 		2BC4F4CA2C47F1EE0082B288 /* UserOnboardingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4C92C47F1EE0082B288 /* UserOnboardingUIView.swift */; };
@@ -50,22 +50,22 @@
 		2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4EA2C493B4C0082B288 /* EditProfileUIView.swift */; };
 		2BC4F4ED2C4948190082B288 /* FavoriteTrailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4EC2C4948190082B288 /* FavoriteTrailsUIView.swift */; };
 		2BC4F4EF2C4948350082B288 /* FavoriteResortUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4EE2C4948350082B288 /* FavoriteResortUIView.swift */; };
-		2BC4F4F82C4A64050082B288 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4F72C4A64050082B288 /* Track.swift */; };
+		2BC4F4F82C4A64050082B288 /* TrackBestReal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4F72C4A64050082B288 /* TrackBestReal.swift */; };
 		2BC4F4FA2C4A65340082B288 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4F92C4A65340082B288 /* TrackViewModel.swift */; };
-		2BC4F4FC2C4A660C0082B288 /* TracksUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4FB2C4A660C0082B288 /* TracksUIView.swift */; };
+		2BC4F4FC2C4A660C0082B288 /* TracksCoolUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4FB2C4A660C0082B288 /* TracksCoolUIView.swift */; };
 		2BC4F4FE2C4A67830082B288 /* TrackCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F4FD2C4A67830082B288 /* TrackCellUIView.swift */; };
-		2BC4F5052C4A835C0082B288 /* AddNewTrackUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5042C4A835C0082B288 /* AddNewTrackUIView.swift */; };
-		2BC4F5082C4A91360082B288 /* TrackDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5072C4A91360082B288 /* TrackDetailsUIView.swift */; };
-		2BC4F50E2C4AA3160082B288 /* Resort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F50D2C4AA3160082B288 /* Resort.swift */; };
-		2BC4F5112C4AA4180082B288 /* ResortDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5102C4AA4180082B288 /* ResortDetailsUIView.swift */; };
-		2BC4F5142C4AA4370082B288 /* AddResortUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5132C4AA4370082B288 /* AddResortUIView.swift */; };
-		2BC4F5162C4AA4550082B288 /* ReservationsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5152C4AA4550082B288 /* ReservationsUIView.swift */; };
+		2BC4F5052C4A835C0082B288 /* AddNewUnitedTrackUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5042C4A835C0082B288 /* AddNewUnitedTrackUIView.swift */; };
+		2BC4F5082C4A91360082B288 /* TrackLongWayDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5072C4A91360082B288 /* TrackLongWayDetailsUIView.swift */; };
+		2BC4F50E2C4AA3160082B288 /* ResortNatural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F50D2C4AA3160082B288 /* ResortNatural.swift */; };
+		2BC4F5112C4AA4180082B288 /* ResortLowDetailsCowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5102C4AA4180082B288 /* ResortLowDetailsCowUIView.swift */; };
+		2BC4F5142C4AA4370082B288 /* AddResortCoolestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5132C4AA4370082B288 /* AddResortCoolestUIView.swift */; };
+		2BC4F5162C4AA4550082B288 /* ReservationsBestLordUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4F5152C4AA4550082B288 /* ReservationsBestLordUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B55F5042C4AAD410060D9B0 /* ResortCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortCellUIView.swift; sourceTree = "<group>"; };
+		2B55F5042C4AAD410060D9B0 /* ResortShipCowCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortShipCowCellUIView.swift; sourceTree = "<group>"; };
 		2B55F5062C4AAD530060D9B0 /* ResortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortViewModel.swift; sourceTree = "<group>"; };
-		2B55F50A2C4BB6540060D9B0 /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
+		2B55F50A2C4BB6540060D9B0 /* SettingsRiceTallUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRiceTallUIView.swift; sourceTree = "<group>"; };
 		2B55F50D2C4BB6740060D9B0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2B55F50F2C4E48880060D9B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B55F51E2C4E4A640060D9B0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -75,17 +75,17 @@
 		2B55F5282C528BC00060D9B0 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2B55F52A2C528C4E0060D9B0 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2B55F5B52C612E970060D9B0 /* TrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
-		2B55F5B72C612EB00060D9B0 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
-		2B55F5B92C612EF80060D9B0 /* TrainingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingUIView.swift; sourceTree = "<group>"; };
-		2B55F5BB2C6134F20060D9B0 /* NewTrainingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrainingUIView.swift; sourceTree = "<group>"; };
-		2B55F5BD2C6225190060D9B0 /* TrainingCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCellUIView.swift; sourceTree = "<group>"; };
-		2B55F5BF2C6249550060D9B0 /* TrainingDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDetailsUIView.swift; sourceTree = "<group>"; };
+		2B55F5B72C612EB00060D9B0 /* TrainingBiggest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingBiggest.swift; sourceTree = "<group>"; };
+		2B55F5B92C612EF80060D9B0 /* TrainingStrongestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingStrongestUIView.swift; sourceTree = "<group>"; };
+		2B55F5BB2C6134F20060D9B0 /* NewTrainingCoolUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrainingCoolUIView.swift; sourceTree = "<group>"; };
+		2B55F5BD2C6225190060D9B0 /* TrainingForwardCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingForwardCellUIView.swift; sourceTree = "<group>"; };
+		2B55F5BF2C6249550060D9B0 /* TrainingDetailsDefenderCoolUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDetailsDefenderCoolUIView.swift; sourceTree = "<group>"; };
 		2BC4F4AA2C47CD890082B288 /* app724.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app724.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC4F4AD2C47CD890082B288 /* app724App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app724App.swift; sourceTree = "<group>"; };
 		2BC4F4AF2C47CD890082B288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2BC4F4B12C47CD8C0082B288 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BC4F4B42C47CD8C0082B288 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2BC4F4BE2C47D1BF0082B288 /* LoaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderUIView.swift; sourceTree = "<group>"; };
+		2BC4F4BE2C47D1BF0082B288 /* LoaderLoardUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderLoardUIView.swift; sourceTree = "<group>"; };
 		2BC4F4C12C47E0AC0082B288 /* View +extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View +extension.swift"; sourceTree = "<group>"; };
 		2BC4F4C62C47E7230082B288 /* ReviewOnboardingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewOnboardingUIView.swift; sourceTree = "<group>"; };
 		2BC4F4C92C47F1EE0082B288 /* UserOnboardingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOnboardingUIView.swift; sourceTree = "<group>"; };
@@ -98,17 +98,17 @@
 		2BC4F4EA2C493B4C0082B288 /* EditProfileUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUIView.swift; sourceTree = "<group>"; };
 		2BC4F4EC2C4948190082B288 /* FavoriteTrailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTrailsUIView.swift; sourceTree = "<group>"; };
 		2BC4F4EE2C4948350082B288 /* FavoriteResortUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteResortUIView.swift; sourceTree = "<group>"; };
-		2BC4F4F72C4A64050082B288 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		2BC4F4F72C4A64050082B288 /* TrackBestReal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackBestReal.swift; sourceTree = "<group>"; };
 		2BC4F4F92C4A65340082B288 /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
-		2BC4F4FB2C4A660C0082B288 /* TracksUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksUIView.swift; sourceTree = "<group>"; };
+		2BC4F4FB2C4A660C0082B288 /* TracksCoolUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksCoolUIView.swift; sourceTree = "<group>"; };
 		2BC4F4FD2C4A67830082B288 /* TrackCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellUIView.swift; sourceTree = "<group>"; };
 		2BC4F5022C4A78DA0082B288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		2BC4F5042C4A835C0082B288 /* AddNewTrackUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTrackUIView.swift; sourceTree = "<group>"; };
-		2BC4F5072C4A91360082B288 /* TrackDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsUIView.swift; sourceTree = "<group>"; };
-		2BC4F50D2C4AA3160082B288 /* Resort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resort.swift; sourceTree = "<group>"; };
-		2BC4F5102C4AA4180082B288 /* ResortDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortDetailsUIView.swift; sourceTree = "<group>"; };
-		2BC4F5132C4AA4370082B288 /* AddResortUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResortUIView.swift; sourceTree = "<group>"; };
-		2BC4F5152C4AA4550082B288 /* ReservationsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsUIView.swift; sourceTree = "<group>"; };
+		2BC4F5042C4A835C0082B288 /* AddNewUnitedTrackUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUnitedTrackUIView.swift; sourceTree = "<group>"; };
+		2BC4F5072C4A91360082B288 /* TrackLongWayDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLongWayDetailsUIView.swift; sourceTree = "<group>"; };
+		2BC4F50D2C4AA3160082B288 /* ResortNatural.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortNatural.swift; sourceTree = "<group>"; };
+		2BC4F5102C4AA4180082B288 /* ResortLowDetailsCowUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortLowDetailsCowUIView.swift; sourceTree = "<group>"; };
+		2BC4F5132C4AA4370082B288 /* AddResortCoolestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResortCoolestUIView.swift; sourceTree = "<group>"; };
+		2BC4F5152C4AA4550082B288 /* ReservationsBestLordUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsBestLordUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,7 @@
 		2B55F5092C4BB6460060D9B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2B55F50A2C4BB6540060D9B0 /* SettingsUIView.swift */,
+				2B55F50A2C4BB6540060D9B0 /* SettingsRiceTallUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,10 +197,10 @@
 		2B55F5B32C612E740060D9B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2B55F5B92C612EF80060D9B0 /* TrainingUIView.swift */,
-				2B55F5BB2C6134F20060D9B0 /* NewTrainingUIView.swift */,
-				2B55F5BD2C6225190060D9B0 /* TrainingCellUIView.swift */,
-				2B55F5BF2C6249550060D9B0 /* TrainingDetailsUIView.swift */,
+				2B55F5B92C612EF80060D9B0 /* TrainingStrongestUIView.swift */,
+				2B55F5BB2C6134F20060D9B0 /* NewTrainingCoolUIView.swift */,
+				2B55F5BD2C6225190060D9B0 /* TrainingForwardCellUIView.swift */,
+				2B55F5BF2C6249550060D9B0 /* TrainingDetailsDefenderCoolUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 		2B55F5B42C612E780060D9B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2B55F5B72C612EB00060D9B0 /* Training.swift */,
+				2B55F5B72C612EB00060D9B0 /* TrainingBiggest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 		2BC4F4BD2C47D1AD0082B288 /* Loader */ = {
 			isa = PBXGroup;
 			children = (
-				2BC4F4BE2C47D1BF0082B288 /* LoaderUIView.swift */,
+				2BC4F4BE2C47D1BF0082B288 /* LoaderLoardUIView.swift */,
 			);
 			path = Loader;
 			sourceTree = "<group>";
@@ -420,7 +420,7 @@
 			children = (
 				2BC4F5062C4A911E0082B288 /* TrackDetails */,
 				2BC4F5032C4A834A0082B288 /* AddNewTrack */,
-				2BC4F4FB2C4A660C0082B288 /* TracksUIView.swift */,
+				2BC4F4FB2C4A660C0082B288 /* TracksCoolUIView.swift */,
 				2BC4F4FD2C4A67830082B288 /* TrackCellUIView.swift */,
 			);
 			path = View;
@@ -429,7 +429,7 @@
 		2BC4F4F62C4A63F50082B288 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BC4F4F72C4A64050082B288 /* Track.swift */,
+				2BC4F4F72C4A64050082B288 /* TrackBestReal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,7 +437,7 @@
 		2BC4F5032C4A834A0082B288 /* AddNewTrack */ = {
 			isa = PBXGroup;
 			children = (
-				2BC4F5042C4A835C0082B288 /* AddNewTrackUIView.swift */,
+				2BC4F5042C4A835C0082B288 /* AddNewUnitedTrackUIView.swift */,
 			);
 			path = AddNewTrack;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 		2BC4F5062C4A911E0082B288 /* TrackDetails */ = {
 			isa = PBXGroup;
 			children = (
-				2BC4F5072C4A91360082B288 /* TrackDetailsUIView.swift */,
+				2BC4F5072C4A91360082B288 /* TrackLongWayDetailsUIView.swift */,
 			);
 			path = TrackDetails;
 			sourceTree = "<group>";
@@ -473,8 +473,8 @@
 			children = (
 				2BC4F50F2C4AA3F50082B288 /* ResortDetails */,
 				2BC4F5122C4AA4220082B288 /* AddNewResort */,
-				2BC4F5152C4AA4550082B288 /* ReservationsUIView.swift */,
-				2B55F5042C4AAD410060D9B0 /* ResortCellUIView.swift */,
+				2BC4F5152C4AA4550082B288 /* ReservationsBestLordUIView.swift */,
+				2B55F5042C4AAD410060D9B0 /* ResortShipCowCellUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 		2BC4F50C2C4AA2C70082B288 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BC4F50D2C4AA3160082B288 /* Resort.swift */,
+				2BC4F50D2C4AA3160082B288 /* ResortNatural.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -490,7 +490,7 @@
 		2BC4F50F2C4AA3F50082B288 /* ResortDetails */ = {
 			isa = PBXGroup;
 			children = (
-				2BC4F5102C4AA4180082B288 /* ResortDetailsUIView.swift */,
+				2BC4F5102C4AA4180082B288 /* ResortLowDetailsCowUIView.swift */,
 			);
 			path = ResortDetails;
 			sourceTree = "<group>";
@@ -498,7 +498,7 @@
 		2BC4F5122C4AA4220082B288 /* AddNewResort */ = {
 			isa = PBXGroup;
 			children = (
-				2BC4F5132C4AA4370082B288 /* AddResortUIView.swift */,
+				2BC4F5132C4AA4370082B288 /* AddResortCoolestUIView.swift */,
 			);
 			path = AddNewResort;
 			sourceTree = "<group>";
@@ -590,29 +590,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BC4F4CA2C47F1EE0082B288 /* UserOnboardingUIView.swift in Sources */,
-				2B55F5BC2C6134F20060D9B0 /* NewTrainingUIView.swift in Sources */,
+				2B55F5BC2C6134F20060D9B0 /* NewTrainingCoolUIView.swift in Sources */,
 				2BC4F4EF2C4948350082B288 /* FavoriteResortUIView.swift in Sources */,
 				2BC4F4B02C47CD890082B288 /* ContentView.swift in Sources */,
 				2B55F52B2C528C4E0060D9B0 /* Device.swift in Sources */,
-				2BC4F5052C4A835C0082B288 /* AddNewTrackUIView.swift in Sources */,
+				2BC4F5052C4A835C0082B288 /* AddNewUnitedTrackUIView.swift in Sources */,
 				2B55F5252C4E5D0C0060D9B0 /* WebUIView.swift in Sources */,
 				2BC4F4E72C491D0B0082B288 /* ProfileUIView.swift in Sources */,
-				2B55F5052C4AAD410060D9B0 /* ResortCellUIView.swift in Sources */,
-				2BC4F4FC2C4A660C0082B288 /* TracksUIView.swift in Sources */,
-				2BC4F5112C4AA4180082B288 /* ResortDetailsUIView.swift in Sources */,
-				2B55F5BA2C612EF80060D9B0 /* TrainingUIView.swift in Sources */,
+				2B55F5052C4AAD410060D9B0 /* ResortShipCowCellUIView.swift in Sources */,
+				2BC4F4FC2C4A660C0082B288 /* TracksCoolUIView.swift in Sources */,
+				2BC4F5112C4AA4180082B288 /* ResortLowDetailsCowUIView.swift in Sources */,
+				2B55F5BA2C612EF80060D9B0 /* TrainingStrongestUIView.swift in Sources */,
 				2BC4F4AE2C47CD890082B288 /* app724App.swift in Sources */,
 				2B55F5272C528B500060D9B0 /* Network.swift in Sources */,
 				2BC4F4FA2C4A65340082B288 /* TrackViewModel.swift in Sources */,
-				2B55F5B82C612EB00060D9B0 /* Training.swift in Sources */,
-				2BC4F5162C4AA4550082B288 /* ReservationsUIView.swift in Sources */,
+				2B55F5B82C612EB00060D9B0 /* TrainingBiggest.swift in Sources */,
+				2BC4F5162C4AA4550082B288 /* ReservationsBestLordUIView.swift in Sources */,
 				2BC4F4DD2C4827360082B288 /* ImagePicker.swift in Sources */,
 				2BC4F4FE2C4A67830082B288 /* TrackCellUIView.swift in Sources */,
-				2B55F50B2C4BB6540060D9B0 /* SettingsUIView.swift in Sources */,
+				2B55F50B2C4BB6540060D9B0 /* SettingsRiceTallUIView.swift in Sources */,
 				2BC4F4ED2C4948190082B288 /* FavoriteTrailsUIView.swift in Sources */,
 				2BC4F4D62C48149B0082B288 /* TabUIView.swift in Sources */,
 				2B55F50E2C4BB6740060D9B0 /* SettingsViewModel.swift in Sources */,
-				2B55F5C02C6249550060D9B0 /* TrainingDetailsUIView.swift in Sources */,
+				2B55F5C02C6249550060D9B0 /* TrainingDetailsDefenderCoolUIView.swift in Sources */,
 				2BC4F4E92C4930CB0082B288 /* ProfileViewModel.swift in Sources */,
 				2B55F5102C4E48880060D9B0 /* AppDelegate.swift in Sources */,
 				2B55F5292C528BC00060D9B0 /* Data.swift in Sources */,
@@ -620,17 +620,17 @@
 				2BC4F4EB2C493B4C0082B288 /* EditProfileUIView.swift in Sources */,
 				2B55F51F2C4E4A640060D9B0 /* Response.swift in Sources */,
 				2BC4F4E12C4900E10082B288 /* ProfileModel.swift in Sources */,
-				2BC4F4F82C4A64050082B288 /* Track.swift in Sources */,
-				2BC4F5142C4AA4370082B288 /* AddResortUIView.swift in Sources */,
-				2BC4F50E2C4AA3160082B288 /* Resort.swift in Sources */,
-				2BC4F5082C4A91360082B288 /* TrackDetailsUIView.swift in Sources */,
+				2BC4F4F82C4A64050082B288 /* TrackBestReal.swift in Sources */,
+				2BC4F5142C4AA4370082B288 /* AddResortCoolestUIView.swift in Sources */,
+				2BC4F50E2C4AA3160082B288 /* ResortNatural.swift in Sources */,
+				2BC4F5082C4A91360082B288 /* TrackLongWayDetailsUIView.swift in Sources */,
 				2BC4F4DB2C4825080082B288 /* SignUpUIView.swift in Sources */,
-				2BC4F4BF2C47D1BF0082B288 /* LoaderUIView.swift in Sources */,
+				2BC4F4BF2C47D1BF0082B288 /* LoaderLoardUIView.swift in Sources */,
 				2BC4F4C72C47E7230082B288 /* ReviewOnboardingUIView.swift in Sources */,
 				2BC4F4C22C47E0AC0082B288 /* View +extension.swift in Sources */,
 				2B55F5212C4E4A8D0060D9B0 /* API.swift in Sources */,
 				2B55F5072C4AAD530060D9B0 /* ResortViewModel.swift in Sources */,
-				2B55F5BE2C6225190060D9B0 /* TrainingCellUIView.swift in Sources */,
+				2B55F5BE2C6225190060D9B0 /* TrainingForwardCellUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

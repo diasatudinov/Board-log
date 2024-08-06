@@ -1,5 +1,5 @@
 //
-//  AddNewTrackUIView.swift
+//  AddNewUnitedTrackUIView.swift
 //  app724
 //
 //  Created by Dias Atudinov on 19.07.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddNewTrackUIView: View {
+struct AddNewUnitedTrackUIView: View {
     @ObservedObject var viewModel: TrackViewModel
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
@@ -140,7 +140,7 @@ struct AddNewTrackUIView: View {
                                 .font(.system(size: 17, weight: .semibold))
                                 .foregroundColor(.white)
                             
-                            StarRatingAddTrack(viewModel: viewModel, rating: $rating)
+                            StarLessRatingAddMoreTrack(viewModel: viewModel, rating: $rating)
                         }
                     }.padding(.horizontal)
                     
@@ -156,10 +156,10 @@ struct AddNewTrackUIView: View {
                     if !name.isEmpty && !length.isEmpty && !location.isEmpty && rating != 0 {
                         
                         if let image = selectedImage {
-                            let track = Track(imageData: image.jpegData(compressionQuality: 1.0), name: name, length: length, location: location, rating: rating)
+                            let track = TrackBestReal(imageData: image.jpegData(compressionQuality: 1.0), name: name, length: length, location: location, rating: rating)
                             viewModel.addTracks(track)
                         } else {
-                            let track = Track(name: name, length: length, location: location, rating: rating)
+                            let track = TrackBestReal(name: name, length: length, location: location, rating: rating)
                             viewModel.addTracks(track)
                         }
                         isAddTrackOpen = false
@@ -196,10 +196,10 @@ struct AddNewTrackUIView: View {
 }
 
 #Preview {
-    AddNewTrackUIView(viewModel: TrackViewModel(), isAddTrackOpen: .constant(true))
+    AddNewUnitedTrackUIView(viewModel: TrackViewModel(), isAddTrackOpen: .constant(true))
 }
 
-struct StarRatingAddTrack: View {
+struct StarLessRatingAddMoreTrack: View {
     @ObservedObject var viewModel: TrackViewModel
     @Binding var rating: Int
     var body: some View {
