@@ -8,9 +8,7 @@
 import Foundation
 
 class TrainingViewModel: ObservableObject {
-    @Published var trainings: [TrainingBiggest] = [
-        TrainingBiggest(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16"),
-        TrainingBiggest(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16")] {
+    @Published var trainings: [TrainingBiggest] = [ ] {
         didSet {
             saveTraining()
         }
