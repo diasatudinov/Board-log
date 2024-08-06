@@ -8,41 +8,27 @@
 import Foundation
 
 class TrainingViewModel: ObservableObject {
-    @Published var tracks: [Track] = [] {
+    @Published var trainings: [Training] = [
+        Training(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16"),
+        Training(emoji: "🥶", name: "Beaver Creek", date: "Jun 10, 2024", maxSpeed: "76", numDescents: "11", numTricks: "16")] {
         didSet {
-            saveTracks()
+            saveTraining()
         }
     }
     
-    private let tracksFileName = "tracks.json"
+    private let trainingFileName = "training.json"
     
     init() {
-        loadTracks()
+        loadTraining()
     }
     
-    func addTracks(_ track: Track) {
-        tracks.append(track)
+    func addTraining(_ training: Training) {
+        trainings.append(training)
     }
     
-    func deleteTrack(at index: Int) {
-        guard index < tracks.count else { return }
-        tracks.remove(at: index)
-    }
-    
-    func toggleFavorite(for track: Track) {
-        if let index = tracks.firstIndex(where: { $0.id == track.id }) {
-            tracks[index].isFavorite.toggle()
-        }
-    }
-    
-    func updateRating(for track: Track, rating: Int) {
-        if let index = tracks.firstIndex(where: { $0.id == track.id }) {
-            tracks[index].rating = rating
-        }
-    }
-    
-    var favoriteResorts: [Track] {
-        tracks.filter { $0.isFavorite }
+    func deleteTraining(at index: Int) {
+        guard index < trainings.count else { return }
+        trainings.remove(at: index)
     }
     
     private func getDocumentsDirectory() -> URL {
@@ -50,27 +36,27 @@ class TrainingViewModel: ObservableObject {
         return paths[0]
     }
     
-    private func tracksFilePath() -> URL {
-        return getDocumentsDirectory().appendingPathComponent(tracksFileName)
+    private func trainingsFilePath() -> URL {
+        return getDocumentsDirectory().appendingPathComponent(trainingFileName)
     }
     
-    private func saveTracks() {
+    private func saveTraining() {
         DispatchQueue.global().async {
             let encoder = JSONEncoder()
             do {
-                let data = try encoder.encode(self.tracks)
-                try data.write(to: self.tracksFilePath())
+                let data = try encoder.encode(self.trainings)
+                try data.write(to: self.trainingsFilePath())
             } catch {
                 print("Failed to save players: \(error.localizedDescription)")
             }
         }
     }
     
-    private func loadTracks() {
+    private func loadTraining() {
         let decoder = JSONDecoder()
         do {
-            let data = try Data(contentsOf: tracksFilePath())
-            tracks = try decoder.decode([Track].self, from: data)
+            let data = try Data(contentsOf: trainingsFilePath())
+            trainings = try decoder.decode([Training].self, from: data)
         } catch {
             print("Failed to load players: \(error.localizedDescription)")
         }

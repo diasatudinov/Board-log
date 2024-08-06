@@ -59,7 +59,6 @@ struct LoaderUIView: View {
                     
                 }
                 .onAppear {
-                    print(checkWeb())
                     startTimer()
                     fetch()
                 }
@@ -85,15 +84,6 @@ struct LoaderUIView: View {
             } else {
                 Text("222")
             }
-            
-//            if checkWeb() == true {
-//                
-//                    
-//                
-//            } else {
-//                UserOnboardingUIView()
-//                    
-//            }
         }
     }
     func startTimer() {
@@ -126,38 +116,6 @@ struct LoaderUIView: View {
         }
         return response.sortable
     }
-    
-//    private func check_data() {
-//        
-//        guard isRequested == false else {
-//            
-//           // self.isFetched = true
-//            
-//            return
-//        }
-//        
-//        let networkService = NetworkService()
-//        let deviceData = DeviceInfo.collectData()
-//        
-//        print(deviceData)
-//        networkService.sendRequest(endpoint: deviceData) { result in
-//            
-//            isRequested = true
-//            
-//            switch result {
-//                
-//            case .success(let success):
-//                
-//                self.isBlock = success
-//                //self.isFetched = true
-//                
-//            case .failure(_):
-//                
-//                self.isBlock = self.isDead
-//                //self.isFetched = true
-//            }
-//        }
-//    }
 }
 
 #Preview {

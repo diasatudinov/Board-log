@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TrainingUIView: View {
     @ObservedObject var viewModel: TrainingViewModel
-    @State private var showAddTrackSheet = false
-    @State private var selectedTrack: Track?
+    @State private var showAddTrainingSheet = false
+    @State private var selectedTraining: Training?
     var body: some View {
         NavigationView {
             ZStack {
@@ -24,7 +24,7 @@ struct TrainingUIView: View {
                         Spacer()
                     }.padding(.horizontal)
                     
-                    if viewModel.tracks.isEmpty {
+                    if viewModel.trainings.isEmpty {
                         VStack {
                             ZStack {
                                 Rectangle()
@@ -44,7 +44,7 @@ struct TrainingUIView: View {
                                         .foregroundColor(.white)
                                         .padding(.bottom, 25)
                                     Button {
-                                        showAddTrackSheet = true
+                                        showAddTrainingSheet = true
                                     } label: {
                                         ZStack(alignment: .center) {
                                             Rectangle()
@@ -69,18 +69,18 @@ struct TrainingUIView: View {
                         }
                     } else {
                         ScrollView {
-                            ForEach(viewModel.tracks, id: \.self){ track in
-//                                TrackCellUIView(viewModel: viewModel, track: track).padding(.bottom, 13)
-//                                    .onTapGesture {
-//                                        selectedTrack = track
-//                                    }
+                            ForEach(viewModel.trainings, id: \.self){ training in
+                                TrainingCellUIView(viewModel: viewModel, training: training).padding(.bottom, 13)
+                                    .onTapGesture {
+                                        selectedTraining = training
+                                    }
                             }
                         }.padding(.horizontal).padding(.bottom, 40)
                     }
                 }
                 .navigationBarItems(trailing:
                                         Button {
-                    showAddTrackSheet = true
+                    showAddTrainingSheet = true
                 } label: {
                     Image(systemName: "plus")
                         .foregroundColor(.onboardingButton)
@@ -89,11 +89,12 @@ struct TrainingUIView: View {
                 }
                 )
             }
-            .sheet(isPresented: $showAddTrackSheet) {
-                //AddNewTrackUIView(viewModel: viewModel, isAddTrackOpen: $showAddTrackSheet)
+            .sheet(isPresented: $showAddTrainingSheet) {
+                
+                NewTrainingUIView(viewModel: viewModel, isAddTrainingOpen: $showAddTrainingSheet)
             }
-            .sheet(item: $selectedTrack) { track in
-                //TrackDetailsUIView(viewModel: viewModel, track: track)
+            .sheet(item: $selectedTraining) { training in
+                TrainingDetailsUIView(viewModel: viewModel, training: training)
                 
                 
             }
